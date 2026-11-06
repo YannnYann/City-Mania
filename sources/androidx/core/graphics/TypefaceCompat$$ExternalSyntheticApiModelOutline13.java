@@ -1,0 +1,8 @@
+package androidx.core.graphics;
+
+/* JADX INFO: compiled from: R8$$SyntheticClass */
+/* JADX INFO: loaded from: classes.dex */
+public final /* synthetic */ class TypefaceCompat$$ExternalSyntheticApiModelOutline13 {
+    public static /* synthetic */ void m() {
+    }
+}

@@ -1,0 +1,21 @@
+###### Class androidx.datastore.core.InterProcessCoordinatorKt (androidx.datastore.core.InterProcessCoordinatorKt)
+.class public final Landroidx/datastore/core/InterProcessCoordinatorKt;
+.super Ljava/lang/Object;
+.source "InterProcessCoordinator.kt"
+
+
+# direct methods
+.method public static final createSingleProcessCoordinator(Ljava/lang/String;)Landroidx/datastore/core/InterProcessCoordinator;
+    .registers 2
+
+    const-string v0, "filePath"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 85
+    new-instance v0, Landroidx/datastore/core/SingleProcessCoordinator;
+
+    invoke-direct {v0, p0}, Landroidx/datastore/core/SingleProcessCoordinator;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method

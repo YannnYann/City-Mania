@@ -1,0 +1,11 @@
+package com.google.firebase;
+
+import com.google.android.gms.common.annotation.KeepForSdk;
+
+/* JADX INFO: loaded from: classes3.dex */
+@KeepForSdk
+public final class DataCollectionDefaultChange {
+
+    @KeepForSdk
+    public final boolean enabled;
+}

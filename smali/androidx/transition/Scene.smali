@@ -1,0 +1,64 @@
+###### Class androidx.transition.Scene (androidx.transition.Scene)
+.class public Landroidx/transition/Scene;
+.super Ljava/lang/Object;
+.source "Scene.java"
+
+
+# instance fields
+.field public mExitAction:Ljava/lang/Runnable;
+
+.field public mSceneRoot:Landroid/view/ViewGroup;
+
+
+# direct methods
+.method public static getCurrentScene(Landroid/view/ViewGroup;)Landroidx/transition/Scene;
+    .registers 2
+
+    .line 209
+    sget v0, Landroidx/transition/R$id;->transition_current_scene:I
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/transition/Scene;
+
+    return-object p0
+.end method
+
+.method public static setCurrentScene(Landroid/view/ViewGroup;Landroidx/transition/Scene;)V
+    .registers 3
+
+    .line 196
+    sget v0, Landroidx/transition/R$id;->transition_current_scene:I
+
+    invoke-virtual {p0, v0, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public exit()V
+    .registers 2
+
+    .line 149
+    iget-object v0, p0, Landroidx/transition/Scene;->mSceneRoot:Landroid/view/ViewGroup;
+
+    invoke-static {v0}, Landroidx/transition/Scene;->getCurrentScene(Landroid/view/ViewGroup;)Landroidx/transition/Scene;
+
+    move-result-object v0
+
+    if-ne v0, p0, :cond_f
+
+    .line 150
+    iget-object v0, p0, Landroidx/transition/Scene;->mExitAction:Ljava/lang/Runnable;
+
+    if-eqz v0, :cond_f
+
+    .line 151
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    :cond_f
+    return-void
+.end method

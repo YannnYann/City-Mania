@@ -1,0 +1,81 @@
+package com.google.android.gms.games.snapshot;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.apps.common.proguard.UsedByReflection;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+import com.google.android.gms.games.internal.zzg;
+import java.util.Objects;
+
+/* JADX INFO: compiled from: com.google.android.gms:play-services-games-v2@@22.1.0 */
+/* JADX INFO: loaded from: classes3.dex */
+@UsedByReflection("GamesGmsClientImpl.java")
+@SafeParcelable.Class(creator = "SnapshotEntityCreator")
+@SafeParcelable.Reserved({1000})
+public final class SnapshotEntity extends zzg implements Snapshot {
+    public static final Parcelable.Creator<SnapshotEntity> CREATOR = new zzb();
+
+    @SafeParcelable.Field(getter = "getMetadata", id = 1)
+    public final SnapshotMetadataEntity zza;
+
+    @SafeParcelable.Field(getter = "getSnapshotContents", id = 3)
+    public final SnapshotContentsEntity zzb;
+
+    @SafeParcelable.Constructor
+    public SnapshotEntity(@SafeParcelable.Param(id = 1) SnapshotMetadata snapshotMetadata, @SafeParcelable.Param(id = 3) SnapshotContentsEntity snapshotContentsEntity) {
+        this.zza = new SnapshotMetadataEntity(snapshotMetadata);
+        this.zzb = snapshotContentsEntity;
+    }
+
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Snapshot)) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        Snapshot snapshot = (Snapshot) obj;
+        return Objects.equals(snapshot.getMetadata(), getMetadata()) && Objects.equals(snapshot.getSnapshotContents(), getSnapshotContents());
+    }
+
+    @Override // com.google.android.gms.common.data.Freezable
+    public final /* bridge */ /* synthetic */ Snapshot freeze() {
+        return this;
+    }
+
+    @Override // com.google.android.gms.games.snapshot.Snapshot
+    public SnapshotMetadata getMetadata() {
+        return this.zza;
+    }
+
+    @Override // com.google.android.gms.games.snapshot.Snapshot
+    public SnapshotContents getSnapshotContents() {
+        SnapshotContentsEntity snapshotContentsEntity = this.zzb;
+        if (snapshotContentsEntity.isClosed()) {
+            return null;
+        }
+        return snapshotContentsEntity;
+    }
+
+    public int hashCode() {
+        return Objects.hash(getMetadata(), getSnapshotContents());
+    }
+
+    @Override // com.google.android.gms.common.data.Freezable
+    public boolean isDataValid() {
+        return true;
+    }
+
+    public String toString() {
+        return com.google.android.gms.common.internal.Objects.toStringHelper(this).add("Metadata", getMetadata()).add("HasContents", Boolean.valueOf(getSnapshotContents() != null)).toString();
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        int iBeginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeParcelable(parcel, 1, getMetadata(), i, false);
+        SafeParcelWriter.writeParcelable(parcel, 3, getSnapshotContents(), i, false);
+        SafeParcelWriter.finishObjectHeader(parcel, iBeginObjectHeader);
+    }
+}

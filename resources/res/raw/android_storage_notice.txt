@@ -1,0 +1,22 @@
+Important notice about this folder
+
+Due to changes in how Android apps can access external files we had to move all of the game files
+into a new location that is conform with Google's new Scoped Storage model.
+This also impacts older versions of Android as the new rules also apply to updates of existing apps
+to older devices.
+
+You should be able to access your game files using Android's built-in file explorer. Other apps
+should also be able to access these files once they are updated to use Google's storage access
+framework (SAF). When connecting your device to a PC you can access the game files in the following
+location:
+Android/data/info.flowersoft.theotown.theotown/files
+
+PLEASE NOTE that uninstalling the game may delete your game files if you are not careful. To
+circumvent any data loss we therefore highly recommend to make a backup of your files before that.
+
+Sorry for the inconvenience. These changes are rough but make sense from a security standpoint.
+If you have any questions, don't hesitate to contact us info@theotown.com :)
+
+Announcement in our forum: https://bit.ly/3lJFHGy
+Google's announcement about enforcing the new model: https://developer.android.com/distribute/best-practices/develop/target-sdk
+Google's explanation of the new storage model: https://developer.android.com/training/data-storage#scoped-storage

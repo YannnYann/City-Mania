@@ -1,0 +1,104 @@
+###### Class com.ironsource.lifecycle.IronsourceLifecycleProvider (com.ironsource.lifecycle.IronsourceLifecycleProvider)
+.class public Lcom/ironsource/lifecycle/IronsourceLifecycleProvider;
+.super Landroid/content/ContentProvider;
+.source "SourceFile"
+
+
+# static fields
+.field private static a:Z = false
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 0
+
+    .line 0
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
+
+    return-void
+.end method
+
+.method public static a()Z
+    .registers 1
+
+    .line 1
+    sget-boolean v0, Lcom/ironsource/lifecycle/IronsourceLifecycleProvider;->a:Z
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
+    .registers 4
+
+    .line 0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public getType(Landroid/net/Uri;)Ljava/lang/String;
+    .registers 2
+
+    .line 0
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    .registers 3
+
+    .line 0
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public onCreate()Z
+    .registers 4
+
+    const/4 v0, 0x1
+
+    .line 1
+    sput-boolean v0, Lcom/ironsource/lifecycle/IronsourceLifecycleProvider;->a:Z
+
+    .line 2
+    invoke-static {}, Lcom/ironsource/lifecycle/b;->d()Lcom/ironsource/lifecycle/b;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/ironsource/lifecycle/b;->a(Landroid/content/Context;)V
+
+    return v0
+.end method
+
+.method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    .registers 6
+
+    .line 0
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    .registers 5
+
+    .line 0
+    const/4 p1, 0x0
+
+    return p1
+.end method

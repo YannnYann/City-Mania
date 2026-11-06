@@ -1,0 +1,46 @@
+###### Class kotlinx.coroutines.SupervisorCoroutine (kotlinx.coroutines.SupervisorCoroutine)
+.class public final Lkotlinx/coroutines/SupervisorCoroutine;
+.super Lkotlinx/coroutines/internal/ScopeCoroutine;
+.source "Supervisor.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lkotlinx/coroutines/internal/ScopeCoroutine<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/CoroutineContext;",
+            "Lkotlin/coroutines/Continuation<",
+            "-TT;>;)V"
+        }
+    .end annotation
+
+    .line 67
+    invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/internal/ScopeCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public childCancelled(Ljava/lang/Throwable;)Z
+    .registers 2
+
+    .line 0
+    const/4 p1, 0x0
+
+    return p1
+.end method

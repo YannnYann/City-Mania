@@ -1,0 +1,64 @@
+package io.bidmachine.media3.extractor.text.webvtt;
+
+import io.bidmachine.media3.common.text.Cue;
+import io.bidmachine.media3.common.util.Assertions;
+import io.bidmachine.media3.common.util.Consumer;
+import io.bidmachine.media3.common.util.ParsableByteArray;
+import io.bidmachine.media3.common.util.Util;
+import io.bidmachine.media3.extractor.text.CuesWithTiming;
+import io.bidmachine.media3.extractor.text.SubtitleParser;
+import java.util.ArrayList;
+import java.util.Collections;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class Mp4WebvttParser implements SubtitleParser {
+    public final ParsableByteArray parsableByteArray = new ParsableByteArray();
+
+    @Override // io.bidmachine.media3.extractor.text.SubtitleParser
+    public int getCueReplacementBehavior() {
+        return 2;
+    }
+
+    @Override // io.bidmachine.media3.extractor.text.SubtitleParser
+    public void parse(byte[] bArr, int i, int i2, SubtitleParser.OutputOptions outputOptions, Consumer<CuesWithTiming> consumer) {
+        this.parsableByteArray.reset(bArr, i2 + i);
+        this.parsableByteArray.setPosition(i);
+        ArrayList arrayList = new ArrayList();
+        while (this.parsableByteArray.bytesLeft() > 0) {
+            Assertions.checkArgument(this.parsableByteArray.bytesLeft() >= 8, "Incomplete Mp4Webvtt Top Level box header found.");
+            int i3 = this.parsableByteArray.readInt();
+            if (this.parsableByteArray.readInt() == 1987343459) {
+                arrayList.add(parseVttCueBox(this.parsableByteArray, i3 - 8));
+            } else {
+                this.parsableByteArray.skipBytes(i3 - 8);
+            }
+        }
+        consumer.accept(new CuesWithTiming(arrayList, -9223372036854775807L, -9223372036854775807L));
+    }
+
+    public static Cue parseVttCueBox(ParsableByteArray parsableByteArray, int i) {
+        CharSequence cueText = null;
+        Cue.Builder cueSettingsList = null;
+        while (i > 0) {
+            Assertions.checkArgument(i >= 8, "Incomplete vtt cue box header found.");
+            int i2 = parsableByteArray.readInt();
+            int i3 = parsableByteArray.readInt();
+            int i4 = i2 - 8;
+            String strFromUtf8Bytes = Util.fromUtf8Bytes(parsableByteArray.getData(), parsableByteArray.getPosition(), i4);
+            parsableByteArray.skipBytes(i4);
+            i = (i - 8) - i4;
+            if (i3 == 1937011815) {
+                cueSettingsList = WebvttCueParser.parseCueSettingsList(strFromUtf8Bytes);
+            } else if (i3 == 1885436268) {
+                cueText = WebvttCueParser.parseCueText(null, strFromUtf8Bytes.trim(), Collections.EMPTY_LIST);
+            }
+        }
+        if (cueText == null) {
+            cueText = "";
+        }
+        if (cueSettingsList != null) {
+            return cueSettingsList.setText(cueText).build();
+        }
+        return WebvttCueParser.newCueForText(cueText);
+    }
+}

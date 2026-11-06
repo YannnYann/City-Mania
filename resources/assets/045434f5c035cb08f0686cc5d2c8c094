@@ -1,0 +1,11 @@
+{
+  "id":"5a06a291-980f-406e-9b77-b72814331e36",  // Unique id for the plugin, used https://www.uuidgenerator.net/
+  "version":3,                                  // Integer version code
+  "title":"Sample plugin",                      // Title for the plugin
+  "text":"Just an example for a plugin.",       // Text for the plugin (optional)
+  "author":"Theo&Lobby",                        // Author of the plugin
+  "thumbnail":"sample_bmp.png",                 // Thumbnail image file (optional)
+  "category":false,                             // Specify whether to show a category for the plugin (optional)
+  "url":"https://forum.theotown.com/viewtopic.php?p=5604#5604", // An URL where to get the plugin (optional)
+  "once":true                                   // Ignore other occurrences of this plugin
+}

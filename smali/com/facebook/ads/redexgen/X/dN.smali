@@ -1,0 +1,215 @@
+###### Class com.facebook.ads.redexgen.X.C2307dN (com.facebook.ads.redexgen.X.dN)
+.class public final Lcom/facebook/ads/redexgen/X/dN;
+.super Ljava/lang/Object;
+.source ""
+
+
+# static fields
+.field public static A00:[B
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .registers 0
+
+    invoke-static {}, Lcom/facebook/ads/redexgen/X/dN;->A02()V
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .line 87134
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static A00(III)Ljava/lang/String;
+    .registers 5
+
+    sget-object v1, Lcom/facebook/ads/redexgen/X/dN;->A00:[B
+
+    add-int v0, p0, p1
+
+    invoke-static {v1, p0, v0}, Ljava/util/Arrays;->copyOfRange([BII)[B
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    :goto_9
+    array-length v0, p0
+
+    if-ge v1, v0, :cond_17
+
+    aget-byte v0, p0, v1
+
+    xor-int/2addr v0, p2
+
+    xor-int/lit8 v0, v0, 0x40
+
+    int-to-byte v0, v0
+
+    aput-byte v0, p0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_9
+
+    :cond_17
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, p0}, Ljava/lang/String;-><init>([B)V
+
+    return-object v0
+.end method
+
+.method private A01(Ljava/lang/String;)Ljava/lang/String;
+    .registers 5
+
+    .line 87135
+    const/16 v0, 0x2e
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v2
+
+    .line 87136
+    .local v0, "dotIndex":I
+    const/16 v0, 0x2f
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v1
+
+    .line 87137
+    .local v1, "slashIndex":I
+    const/4 v0, -0x1
+
+    if-eq v2, v0, :cond_26
+
+    if-le v2, v1, :cond_26
+
+    add-int/lit8 v0, v2, 0x2
+
+    add-int/lit8 v1, v0, 0x4
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-le v1, v0, :cond_26
+
+    .line 87138
+    add-int/lit8 v1, v2, 0x1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 87139
+    :goto_25
+    return-object v0
+
+    .line 87140
+    :cond_26
+    const/4 v2, 0x0
+
+    const/4 v1, 0x0
+
+    const/16 v0, 0xd
+
+    invoke-static {v2, v1, v0}, Lcom/facebook/ads/redexgen/X/dN;->A00(III)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_25
+.end method
+
+.method public static A02()V
+    .registers 1
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [B
+
+    fill-array-data v0, :array_a
+
+    sput-object v0, Lcom/facebook/ads/redexgen/X/dN;->A00:[B
+
+    return-void
+
+    nop
+
+    :array_a
+    .array-data 1
+        0x47t
+    .end array-data
+.end method
+
+
+# virtual methods
+.method public final A03(Ljava/lang/String;)Ljava/lang/String;
+    .registers 7
+
+    .line 87141
+    invoke-direct {p0, p1}, Lcom/facebook/ads/redexgen/X/dN;->A01(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 87142
+    .local v0, "extension":Ljava/lang/String;
+    invoke-static {p1}, Lcom/facebook/ads/redexgen/X/dV;->A02(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 87143
+    .local v1, "name":Ljava/lang/String;
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    :goto_e
+    return-object v1
+
+    :cond_f
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
+
+    const/16 v0, 0x29
+
+    invoke-static {v2, v1, v0}, Lcom/facebook/ads/redexgen/X/dN;->A00(III)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_e
+.end method

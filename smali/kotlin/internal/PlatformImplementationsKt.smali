@@ -1,0 +1,23 @@
+###### Class kotlin.internal.PlatformImplementationsKt (kotlin.internal.PlatformImplementationsKt)
+.class public final Lkotlin/internal/PlatformImplementationsKt;
+.super Ljava/lang/Object;
+.source "PlatformImplementations.kt"
+
+
+# static fields
+.field public static final IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 66
+    new-instance v0, Lkotlin/internal/jdk8/JDK8PlatformImplementations;
+
+    invoke-direct {v0}, Lkotlin/internal/jdk8/JDK8PlatformImplementations;-><init>()V
+
+    sput-object v0, Lkotlin/internal/PlatformImplementationsKt;->IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
+
+    return-void
+.end method

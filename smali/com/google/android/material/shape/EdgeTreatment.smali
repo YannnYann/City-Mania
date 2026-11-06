@@ -1,0 +1,37 @@
+###### Class com.google.android.material.shape.EdgeTreatment (com.google.android.material.shape.EdgeTreatment)
+.class public Lcom/google/android/material/shape/EdgeTreatment;
+.super Ljava/lang/Object;
+.source "EdgeTreatment.java"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public forceIntersection()Z
+    .registers 2
+
+    .line 0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getEdgePath(FFFLcom/google/android/material/shape/ShapePath;)V
+    .registers 5
+
+    const/4 p2, 0x0
+
+    .line 64
+    invoke-virtual {p4, p1, p2}, Lcom/google/android/material/shape/ShapePath;->lineTo(FF)V
+
+    return-void
+.end method

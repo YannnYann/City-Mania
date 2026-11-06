@@ -1,0 +1,14 @@
+package ads_mobile_sdk;
+
+import ads_mobile_sdk.yh1;
+import java.util.RandomAccess;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class ct extends i<Boolean> implements yh1.f, RandomAccess, mu2 {
+    public abstract void a(boolean z);
+
+    public abstract boolean d(int i);
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public abstract int size();
+}

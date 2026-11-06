@@ -1,0 +1,8 @@
+package com.google.crypto.tink.subtle;
+
+import java.security.GeneralSecurityException;
+
+/* JADX INFO: loaded from: classes3.dex */
+public interface IndCpaCipher {
+    byte[] decrypt(final byte[] ciphertext) throws GeneralSecurityException;
+}

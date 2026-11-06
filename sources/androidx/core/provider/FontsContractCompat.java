@@ -1,0 +1,157 @@
+package androidx.core.provider;
+
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import androidx.core.graphics.TypefaceCompat;
+import androidx.core.util.Preconditions;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
+/* JADX INFO: loaded from: classes.dex */
+public class FontsContractCompat {
+
+    public static class FontRequestCallback {
+        public void onTypefaceRequestFailed(int i) {
+            throw null;
+        }
+
+        public void onTypefaceRetrieved(Typeface typeface) {
+            throw null;
+        }
+    }
+
+    public static Typeface buildTypeface(Context context, CancellationSignal cancellationSignal, FontInfo[] fontInfoArr) {
+        return TypefaceCompat.createFromFontInfo(context, cancellationSignal, fontInfoArr, 0);
+    }
+
+    public static FontFamilyResult fetchFonts(Context context, CancellationSignal cancellationSignal, FontRequest fontRequest) throws PackageManager.NameNotFoundException {
+        return FontProvider.getFontFamilyResult(context, FontRequestWorker$$ExternalSyntheticBackport2.m(new Object[]{fontRequest}), cancellationSignal);
+    }
+
+    public static Typeface requestFont(Context context, List<FontRequest> list, int i, boolean z, int i2, Handler handler, FontRequestCallback fontRequestCallback) {
+        CallbackWrapper callbackWrapper = new CallbackWrapper(fontRequestCallback, RequestExecutor.createHandlerExecutor(handler));
+        if (z) {
+            if (list.size() > 1) {
+                throw new IllegalArgumentException("Fallbacks with blocking fetches are not supported for performance reasons");
+            }
+            return FontRequestWorker.requestFontSync(context, list.get(0), callbackWrapper, i, i2);
+        }
+        return FontRequestWorker.requestFontAsync(context, list, i, null, callbackWrapper);
+    }
+
+    public static class FontInfo {
+        public final boolean mItalic;
+        public final int mResultCode;
+        public final int mTtcIndex;
+        public final Uri mUri;
+        public final String mVariationSettings;
+        public final int mWeight;
+
+        @Deprecated
+        public FontInfo(Uri uri, int i, int i2, boolean z, int i3) {
+            this(uri, i, i2, z, null, i3);
+        }
+
+        public static FontInfo create(Uri uri, int i, int i2, boolean z, int i3) {
+            return new FontInfo(uri, i, i2, z, i3);
+        }
+
+        public FontInfo(Uri uri, int i, int i2, boolean z, String str, int i3) {
+            this.mUri = (Uri) Preconditions.checkNotNull(uri);
+            this.mTtcIndex = i;
+            this.mWeight = i2;
+            this.mItalic = z;
+            this.mVariationSettings = str;
+            this.mResultCode = i3;
+        }
+
+        public FontInfo(String str, String str2) {
+            this.mUri = new Uri.Builder().scheme("systemfont").authority(str).build();
+            this.mTtcIndex = 0;
+            this.mWeight = 400;
+            this.mItalic = false;
+            this.mVariationSettings = str2;
+            this.mResultCode = 0;
+        }
+
+        public Uri getUri() {
+            return this.mUri;
+        }
+
+        public int getTtcIndex() {
+            return this.mTtcIndex;
+        }
+
+        public int getWeight() {
+            return this.mWeight;
+        }
+
+        public boolean isItalic() {
+            return this.mItalic;
+        }
+
+        public String getVariationSettings() {
+            return this.mVariationSettings;
+        }
+
+        public String getSystemFont() {
+            if (isSystemFont()) {
+                return this.mUri.getAuthority();
+            }
+            return null;
+        }
+
+        public boolean isSystemFont() {
+            return Objects.equals(this.mUri.getScheme(), "systemfont");
+        }
+
+        public int getResultCode() {
+            return this.mResultCode;
+        }
+    }
+
+    public static class FontFamilyResult {
+        public final List<FontInfo[]> mFonts;
+        public final int mStatusCode;
+
+        @Deprecated
+        public FontFamilyResult(int i, FontInfo[] fontInfoArr) {
+            this.mStatusCode = i;
+            this.mFonts = Collections.singletonList(fontInfoArr);
+        }
+
+        public FontFamilyResult(int i, List<FontInfo[]> list) {
+            this.mStatusCode = i;
+            this.mFonts = list;
+        }
+
+        public int getStatusCode() {
+            return this.mStatusCode;
+        }
+
+        public FontInfo[] getFonts() {
+            return this.mFonts.get(0);
+        }
+
+        public boolean hasFallback() {
+            return this.mFonts.size() > 1;
+        }
+
+        public List<FontInfo[]> getFontsWithFallbacks() {
+            return this.mFonts;
+        }
+
+        public static FontFamilyResult create(int i, FontInfo[] fontInfoArr) {
+            return new FontFamilyResult(i, fontInfoArr);
+        }
+
+        public static FontFamilyResult create(int i, List<FontInfo[]> list) {
+            return new FontFamilyResult(i, list);
+        }
+    }
+}

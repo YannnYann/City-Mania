@@ -1,0 +1,74 @@
+package ads_mobile_sdk;
+
+import android.view.View;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineExceptionHandler;
+import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.NonCancellable;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class wn2 extends SuspendLambda implements Function2 {
+    public int a;
+    public final /* synthetic */ ao2 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wn2(ao2 ao2Var, Continuation continuation) {
+        super(2, continuation);
+        this.b = ao2Var;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new wn2(this.b, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(Object obj, Object obj2) {
+        return new wn2(this.b, (Continuation) obj2).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.a;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            do2 do2Var = this.b.i;
+            if (do2Var != null) {
+                sn2 sn2Var = do2Var.i;
+                if (sn2Var != null) {
+                    do2Var.removeView(sn2Var);
+                    do2Var.i = null;
+                }
+                ao2 ao2Var = this.b;
+                do2 do2Var2 = ao2Var.i;
+                if (do2Var2 != null && ao2Var.b.a((View) do2Var2, false)) {
+                    this.b.a(do2Var);
+                }
+                do2Var.setVisibility(8);
+            }
+            fm0 fm0Var = (fm0) this.b.j.get();
+            if (fm0Var != null) {
+                this.a = 1;
+                m21 m21Var = o21.f;
+                BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(NonCancellable.INSTANCE.plus(getContext()).minusKey(rs3.b).minusKey(CoroutineExceptionHandler.Key).minusKey(Job.Key)), null, null, new tl0(fm0Var, null), 3, null);
+                if (Unit.INSTANCE == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
+        }
+        return Unit.INSTANCE;
+    }
+}

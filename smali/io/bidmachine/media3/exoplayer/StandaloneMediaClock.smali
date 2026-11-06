@@ -1,0 +1,200 @@
+###### Class io.bidmachine.media3.exoplayer.StandaloneMediaClock (io.bidmachine.media3.exoplayer.StandaloneMediaClock)
+.class public final Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;
+.super Ljava/lang/Object;
+.source "StandaloneMediaClock.java"
+
+# interfaces
+.implements Lio/bidmachine/media3/exoplayer/MediaClock;
+
+
+# instance fields
+.field public baseElapsedMs:J
+
+.field public baseUs:J
+
+.field public final clock:Lio/bidmachine/media3/common/util/Clock;
+
+.field public playbackParameters:Lio/bidmachine/media3/common/PlaybackParameters;
+
+.field public started:Z
+
+
+# direct methods
+.method public constructor <init>(Lio/bidmachine/media3/common/util/Clock;)V
+    .registers 2
+
+    .line 42
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 43
+    iput-object p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->clock:Lio/bidmachine/media3/common/util/Clock;
+
+    .line 44
+    sget-object p1, Lio/bidmachine/media3/common/PlaybackParameters;->DEFAULT:Lio/bidmachine/media3/common/PlaybackParameters;
+
+    iput-object p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Lio/bidmachine/media3/common/PlaybackParameters;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getPlaybackParameters()Lio/bidmachine/media3/common/PlaybackParameters;
+    .registers 2
+
+    .line 102
+    iget-object v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Lio/bidmachine/media3/common/PlaybackParameters;
+
+    return-object v0
+.end method
+
+.method public getPositionUs()J
+    .registers 8
+
+    .line 77
+    iget-wide v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->baseUs:J
+
+    .line 78
+    iget-boolean v2, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    if-eqz v2, :cond_24
+
+    .line 79
+    iget-object v2, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->clock:Lio/bidmachine/media3/common/util/Clock;
+
+    invoke-interface {v2}, Lio/bidmachine/media3/common/util/Clock;->elapsedRealtime()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->baseElapsedMs:J
+
+    sub-long/2addr v2, v4
+
+    .line 80
+    iget-object v4, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Lio/bidmachine/media3/common/PlaybackParameters;
+
+    iget v5, v4, Lio/bidmachine/media3/common/PlaybackParameters;->speed:F
+
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    cmpl-float v5, v5, v6
+
+    if-nez v5, :cond_1f
+
+    .line 81
+    invoke-static {v2, v3}, Lio/bidmachine/media3/common/util/Util;->msToUs(J)J
+
+    move-result-wide v2
+
+    :goto_1d
+    add-long/2addr v0, v2
+
+    return-wide v0
+
+    .line 85
+    :cond_1f
+    invoke-virtual {v4, v2, v3}, Lio/bidmachine/media3/common/PlaybackParameters;->getMediaTimeUsForPlayoutTimeMs(J)J
+
+    move-result-wide v2
+
+    goto :goto_1d
+
+    :cond_24
+    return-wide v0
+.end method
+
+.method public resetPosition(J)V
+    .registers 3
+
+    .line 69
+    iput-wide p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->baseUs:J
+
+    .line 70
+    iget-boolean p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    if-eqz p1, :cond_e
+
+    .line 71
+    iget-object p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->clock:Lio/bidmachine/media3/common/util/Clock;
+
+    invoke-interface {p1}, Lio/bidmachine/media3/common/util/Clock;->elapsedRealtime()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->baseElapsedMs:J
+
+    :cond_e
+    return-void
+.end method
+
+.method public setPlaybackParameters(Lio/bidmachine/media3/common/PlaybackParameters;)V
+    .registers 4
+
+    .line 94
+    iget-boolean v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    if-eqz v0, :cond_b
+
+    .line 95
+    invoke-virtual {p0}, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->getPositionUs()J
+
+    move-result-wide v0
+
+    invoke-virtual {p0, v0, v1}, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->resetPosition(J)V
+
+    .line 97
+    :cond_b
+    iput-object p1, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Lio/bidmachine/media3/common/PlaybackParameters;
+
+    return-void
+.end method
+
+.method public start()V
+    .registers 3
+
+    .line 49
+    iget-boolean v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    if-nez v0, :cond_f
+
+    .line 50
+    iget-object v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->clock:Lio/bidmachine/media3/common/util/Clock;
+
+    invoke-interface {v0}, Lio/bidmachine/media3/common/util/Clock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->baseElapsedMs:J
+
+    const/4 v0, 0x1
+
+    .line 51
+    iput-boolean v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    :cond_f
+    return-void
+.end method
+
+.method public stop()V
+    .registers 3
+
+    .line 57
+    iget-boolean v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    if-eqz v0, :cond_e
+
+    .line 58
+    invoke-virtual {p0}, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->getPositionUs()J
+
+    move-result-wide v0
+
+    invoke-virtual {p0, v0, v1}, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->resetPosition(J)V
+
+    const/4 v0, 0x0
+
+    .line 59
+    iput-boolean v0, p0, Lio/bidmachine/media3/exoplayer/StandaloneMediaClock;->started:Z
+
+    :cond_e
+    return-void
+.end method

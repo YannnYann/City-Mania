@@ -1,0 +1,20 @@
+###### Class com.facebook.ads.redexgen.X.InterfaceC2040Xq (com.facebook.ads.redexgen.X.Xq)
+.class public interface abstract Lcom/facebook/ads/redexgen/X/Xq;
+.super Ljava/lang/Object;
+.source ""
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/facebook/ads/redexgen/X/Xr;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "Listener"
+.end annotation
+
+
+# virtual methods
+.method public abstract AEe(Landroid/view/Display;)V
+.end method

@@ -1,0 +1,128 @@
+###### Class com.google.common.collect.ImmutableEntry (com.google.common.collect.ImmutableEntry)
+.class public Lcom/google/common/collect/ImmutableEntry;
+.super Lcom/google/common/collect/AbstractMapEntry;
+.source "ImmutableEntry.java"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lcom/google/common/collect/AbstractMapEntry<",
+        "TK;TV;>;",
+        "Ljava/io/Serializable;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final key:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TK;"
+        }
+    .end annotation
+.end field
+
+.field public final value:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TV;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "key",
+            "value"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;TV;)V"
+        }
+    .end annotation
+
+    .line 35
+    invoke-direct {p0}, Lcom/google/common/collect/AbstractMapEntry;-><init>()V
+
+    .line 36
+    iput-object p1, p0, Lcom/google/common/collect/ImmutableEntry;->key:Ljava/lang/Object;
+
+    .line 37
+    iput-object p2, p0, Lcom/google/common/collect/ImmutableEntry;->value:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getKey()Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TK;"
+        }
+    .end annotation
+
+    .line 43
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableEntry;->key:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final getValue()Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TV;"
+        }
+    .end annotation
+
+    .line 49
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableEntry;->value:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "value"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TV;)TV;"
+        }
+    .end annotation
+
+    .line 55
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method

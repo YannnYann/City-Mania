@@ -1,0 +1,31 @@
+###### Class com.google.android.gms.internal.consent_sdk.zzlg (com.google.android.gms.internal.consent_sdk.zzlg)
+.class public final Lcom/google/android/gms/internal/consent_sdk/zzlg;
+.super Lcom/google/android/gms/internal/consent_sdk/zzqj;
+.source "com.google.android.ump:user-messaging-platform@@4.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/consent_sdk/zzrr;
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 2
+
+    .line 0
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public synthetic constructor <init>(Lcom/google/android/gms/internal/consent_sdk/zzli;)V
+    .registers 2
+
+    .line 1
+    invoke-static {}, Lcom/google/android/gms/internal/consent_sdk/zzlh;->zza()Lcom/google/android/gms/internal/consent_sdk/zzlh;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/consent_sdk/zzqj;-><init>(Lcom/google/android/gms/internal/consent_sdk/zzqm;)V
+
+    return-void
+.end method

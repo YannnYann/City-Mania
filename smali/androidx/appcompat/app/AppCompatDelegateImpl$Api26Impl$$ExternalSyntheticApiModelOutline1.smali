@@ -1,0 +1,15 @@
+###### Class androidx.appcompat.app.AppCompatDelegateImpl$Api26Impl$$ExternalSyntheticApiModelOutline1 (androidx.appcompat.app.AppCompatDelegateImpl$Api26Impl$$ExternalSyntheticApiModelOutline1)
+.class public final synthetic Landroidx/appcompat/app/AppCompatDelegateImpl$Api26Impl$$ExternalSyntheticApiModelOutline1;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+
+# direct methods
+.method public static bridge synthetic m(Landroid/content/res/Configuration;I)V
+    .registers 2
+
+    .line 0
+    iput p1, p0, Landroid/content/res/Configuration;->colorMode:I
+
+    return-void
+.end method

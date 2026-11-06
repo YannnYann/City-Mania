@@ -1,0 +1,65 @@
+###### Class com.google.android.gms.internal.measurement.zzsj (com.google.android.gms.internal.measurement.zzsj)
+.class public final Lcom/google/android/gms/internal/measurement/zzsj;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-impl@@23.2.0"
+
+# interfaces
+.implements Ljava/io/Closeable;
+
+
+# instance fields
+.field private final zza:Ljava/io/Closeable;
+
+
+# direct methods
+.method private constructor <init>(Ljava/io/Closeable;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/measurement/zzsj;->zza:Ljava/io/Closeable;
+
+    return-void
+.end method
+
+.method public static zza(Ljava/io/Closeable;)Lcom/google/android/gms/internal/measurement/zzsj;
+    .registers 2
+
+    .line 0
+    new-instance v0, Lcom/google/android/gms/internal/measurement/zzsj;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/measurement/zzsj;-><init>(Ljava/io/Closeable;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 1
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzsj;->zza:Ljava/io/Closeable;
+
+    if-eqz v0, :cond_7
+
+    invoke-interface {v0}, Ljava/io/Closeable;->close()V
+
+    :cond_7
+    return-void
+.end method
+
+.method public final zzb()Ljava/io/Closeable;
+    .registers 2
+
+    .line 0
+    iget-object v0, p0, Lcom/google/android/gms/internal/measurement/zzsj;->zza:Ljava/io/Closeable;
+
+    return-object v0
+.end method

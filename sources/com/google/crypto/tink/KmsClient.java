@@ -1,0 +1,10 @@
+package com.google.crypto.tink;
+
+import java.security.GeneralSecurityException;
+
+/* JADX INFO: loaded from: classes3.dex */
+public interface KmsClient {
+    boolean doesSupport(String keyUri);
+
+    Aead getAead(String keyUri) throws GeneralSecurityException;
+}

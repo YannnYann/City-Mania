@@ -1,0 +1,51 @@
+package io.bidmachine.media3.ui;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class R$id {
+    public static int exo_ad_overlay = 2131362005;
+    public static int exo_artwork = 2131362006;
+    public static int exo_audio_track = 2131362007;
+    public static int exo_basic_controls = 2131362008;
+    public static int exo_bottom_bar = 2131362009;
+    public static int exo_buffering = 2131362010;
+    public static int exo_center_controls = 2131362011;
+    public static int exo_check = 2131362012;
+    public static int exo_content_frame = 2131362013;
+    public static int exo_controller = 2131362014;
+    public static int exo_controller_placeholder = 2131362015;
+    public static int exo_controls_background = 2131362016;
+    public static int exo_duration = 2131362017;
+    public static int exo_error_message = 2131362018;
+    public static int exo_extra_controls = 2131362019;
+    public static int exo_extra_controls_scroll_view = 2131362020;
+    public static int exo_ffwd = 2131362021;
+    public static int exo_ffwd_with_amount = 2131362022;
+    public static int exo_fullscreen = 2131362023;
+    public static int exo_icon = 2131362024;
+    public static int exo_image = 2131362025;
+    public static int exo_main_text = 2131362026;
+    public static int exo_minimal_controls = 2131362027;
+    public static int exo_minimal_fullscreen = 2131362028;
+    public static int exo_next = 2131362029;
+    public static int exo_overflow_hide = 2131362030;
+    public static int exo_overflow_show = 2131362031;
+    public static int exo_overlay = 2131362032;
+    public static int exo_play_pause = 2131362035;
+    public static int exo_playback_speed = 2131362036;
+    public static int exo_position = 2131362037;
+    public static int exo_prev = 2131362038;
+    public static int exo_progress = 2131362039;
+    public static int exo_progress_placeholder = 2131362040;
+    public static int exo_repeat_toggle = 2131362041;
+    public static int exo_rew = 2131362042;
+    public static int exo_rew_with_amount = 2131362043;
+    public static int exo_settings = 2131362044;
+    public static int exo_shuffle = 2131362046;
+    public static int exo_shutter = 2131362047;
+    public static int exo_sub_text = 2131362048;
+    public static int exo_subtitle = 2131362049;
+    public static int exo_subtitles = 2131362050;
+    public static int exo_text = 2131362051;
+    public static int exo_time = 2131362052;
+    public static int exo_vr = 2131362054;
+}

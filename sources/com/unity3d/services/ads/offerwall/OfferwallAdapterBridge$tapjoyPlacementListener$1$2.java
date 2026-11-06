@@ -1,0 +1,64 @@
+package com.unity3d.services.ads.offerwall;
+
+import com.unity3d.ads.core.domain.offerwall.OfferwallEventData;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.flow.MutableSharedFlow;
+
+/* JADX INFO: compiled from: OfferwallAdapterBridge.kt */
+/* JADX INFO: loaded from: classes4.dex */
+@DebugMetadata(c = "com.unity3d.services.ads.offerwall.OfferwallAdapterBridge$tapjoyPlacementListener$1$2", f = "OfferwallAdapterBridge.kt", l = {101}, m = "invokeSuspend")
+public final class OfferwallAdapterBridge$tapjoyPlacementListener$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ String $placementName;
+    int label;
+    final /* synthetic */ OfferwallAdapterBridge this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public OfferwallAdapterBridge$tapjoyPlacementListener$1$2(OfferwallAdapterBridge offerwallAdapterBridge, String str, Continuation<? super OfferwallAdapterBridge$tapjoyPlacementListener$1$2> continuation) {
+        super(2, continuation);
+        this.this$0 = offerwallAdapterBridge;
+        this.$placementName = str;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new OfferwallAdapterBridge$tapjoyPlacementListener$1$2(this.this$0, this.$placementName, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
+        return ((OfferwallAdapterBridge$tapjoyPlacementListener$1$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.label;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            MutableSharedFlow mutableSharedFlow = this.this$0._offerwallEventFlow;
+            OfferwallEvent offerwallEvent = OfferwallEvent.REQUEST_FAILED;
+            String str = this.$placementName;
+            if (str == null) {
+                str = "";
+            }
+            OfferwallEventData offerwallEventData = new OfferwallEventData(offerwallEvent, str, null, null, 12, null);
+            this.label = 1;
+            if (mutableSharedFlow.emit(offerwallEventData, this) == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
+        }
+        return Unit.INSTANCE;
+    }
+}

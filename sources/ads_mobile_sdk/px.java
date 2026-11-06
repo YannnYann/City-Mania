@@ -1,0 +1,11 @@
+package ads_mobile_sdk;
+
+import kotlin.jvm.internal.Intrinsics;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class px {
+    public static /* synthetic */ qx a(j80 builder) {
+        Intrinsics.checkNotNullParameter(builder, "builder");
+        return new qx(builder);
+    }
+}

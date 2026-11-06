@@ -1,0 +1,6 @@
+package com.vungle.ads.internal.util;
+
+/* JADX INFO: loaded from: classes4.dex */
+public interface w {
+    void a(boolean z);
+}

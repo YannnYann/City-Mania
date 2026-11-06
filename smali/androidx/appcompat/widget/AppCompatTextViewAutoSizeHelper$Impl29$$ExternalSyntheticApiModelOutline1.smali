@@ -1,0 +1,17 @@
+###### Class androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl29$$ExternalSyntheticApiModelOutline1 (androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper$Impl29$$ExternalSyntheticApiModelOutline1)
+.class public final synthetic Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Impl29$$ExternalSyntheticApiModelOutline1;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+
+# direct methods
+.method public static bridge synthetic m(Landroid/widget/TextView;)Z
+    .registers 1
+
+    .line 0
+    invoke-virtual {p0}, Landroid/widget/TextView;->isHorizontallyScrollable()Z
+
+    move-result p0
+
+    return p0
+.end method

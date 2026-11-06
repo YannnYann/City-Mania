@@ -1,0 +1,39 @@
+###### Class io.bidmachine.rendering.model.HtmlResourceSource (io.bidmachine.rendering.model.HtmlResourceSource)
+.class public final Lio/bidmachine/rendering/model/HtmlResourceSource;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lio/bidmachine/rendering/model/ResourceSource;
+
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 3
+
+    const-string v0, "html"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lio/bidmachine/rendering/model/HtmlResourceSource;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getHtml()Ljava/lang/String;
+    .registers 2
+
+    .line 1
+    iget-object v0, p0, Lio/bidmachine/rendering/model/HtmlResourceSource;->a:Ljava/lang/String;
+
+    return-object v0
+.end method

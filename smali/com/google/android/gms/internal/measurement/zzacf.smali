@@ -1,0 +1,19 @@
+###### Class com.google.android.gms.internal.measurement.zzacf (com.google.android.gms.internal.measurement.zzacf)
+.class final Lcom/google/android/gms/internal/measurement/zzacf;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement-base@@23.2.0"
+
+
+# static fields
+.field public static final synthetic zza:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 0
+    const-class v0, Llibcore/io/Memory;
+
+    return-void
+.end method

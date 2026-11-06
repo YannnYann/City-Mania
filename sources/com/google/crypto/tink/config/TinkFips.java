@@ -1,0 +1,10 @@
+package com.google.crypto.tink.config;
+
+import com.google.crypto.tink.config.internal.TinkFipsUtil;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class TinkFips {
+    public static boolean useOnlyFips() {
+        return TinkFipsUtil.useOnlyFips();
+    }
+}

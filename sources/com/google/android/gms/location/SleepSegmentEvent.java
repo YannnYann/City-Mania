@@ -1,0 +1,96 @@
+package com.google.android.gms.location;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.internal.Objects;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.internal.ShowFirstParty;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+
+/* JADX INFO: compiled from: com.google.android.gms:play-services-location@@18.0.0 */
+/* JADX INFO: loaded from: classes3.dex */
+@SafeParcelable.Class(creator = "SleepSegmentEventCreator")
+@SafeParcelable.Reserved({1000})
+public class SleepSegmentEvent extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<SleepSegmentEvent> CREATOR = new zzbv();
+
+    @SafeParcelable.Field(getter = "getStartTimeMillis", id = 1)
+    public final long zza;
+
+    @SafeParcelable.Field(getter = "getEndTimeMillis", id = 2)
+    public final long zzb;
+
+    @SafeParcelable.Field(getter = "getStatus", id = 3)
+    public final int zzc;
+
+    @SafeParcelable.Field(getter = "getMissingDataDurationMinutes", id = 4)
+    public final int zzd;
+
+    @SafeParcelable.Field(getter = "getNinetiethPctConfidence", id = 5)
+    public final int zze;
+
+    @ShowFirstParty
+    @SafeParcelable.Constructor
+    public SleepSegmentEvent(@SafeParcelable.Param(id = 1) long j, @SafeParcelable.Param(id = 2) long j2, @SafeParcelable.Param(id = 3) int i, @SafeParcelable.Param(id = 4) int i2, @SafeParcelable.Param(id = 5) int i3) {
+        Preconditions.checkArgument(j <= j2, "endTimeMillis must be greater than or equal to startTimeMillis");
+        this.zza = j;
+        this.zzb = j2;
+        this.zzc = i;
+        this.zzd = i2;
+        this.zze = i3;
+    }
+
+    public boolean equals(Object obj) {
+        if (obj instanceof SleepSegmentEvent) {
+            SleepSegmentEvent sleepSegmentEvent = (SleepSegmentEvent) obj;
+            if (this.zza == sleepSegmentEvent.getStartTimeMillis() && this.zzb == sleepSegmentEvent.getEndTimeMillis() && this.zzc == sleepSegmentEvent.getStatus() && this.zzd == sleepSegmentEvent.zzd && this.zze == sleepSegmentEvent.zze) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public long getEndTimeMillis() {
+        return this.zzb;
+    }
+
+    public long getStartTimeMillis() {
+        return this.zza;
+    }
+
+    public int getStatus() {
+        return this.zzc;
+    }
+
+    public int hashCode() {
+        return Objects.hashCode(Long.valueOf(this.zza), Long.valueOf(this.zzb), Integer.valueOf(this.zzc));
+    }
+
+    public String toString() {
+        long j = this.zza;
+        long j2 = this.zzb;
+        int i = this.zzc;
+        StringBuilder sb = new StringBuilder(84);
+        sb.append("startMillis=");
+        sb.append(j);
+        sb.append(", endMillis=");
+        sb.append(j2);
+        sb.append(", status=");
+        sb.append(i);
+        return sb.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        Preconditions.checkNotNull(parcel);
+        int iBeginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeLong(parcel, 1, getStartTimeMillis());
+        SafeParcelWriter.writeLong(parcel, 2, getEndTimeMillis());
+        SafeParcelWriter.writeInt(parcel, 3, getStatus());
+        SafeParcelWriter.writeInt(parcel, 4, this.zzd);
+        SafeParcelWriter.writeInt(parcel, 5, this.zze);
+        SafeParcelWriter.finishObjectHeader(parcel, iBeginObjectHeader);
+    }
+}

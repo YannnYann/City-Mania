@@ -1,0 +1,25 @@
+###### Class org.chromium.net.impl.CronetExceptionImpl (org.chromium.net.impl.CronetExceptionImpl)
+.class public Lorg/chromium/net/impl/CronetExceptionImpl;
+.super Lorg/chromium/net/CronetException;
+.source "CronetExceptionImpl.java"
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "message",
+            "cause"
+        }
+    .end annotation
+
+    .line 12
+    invoke-direct {p0, p1, p2}, Lorg/chromium/net/CronetException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method

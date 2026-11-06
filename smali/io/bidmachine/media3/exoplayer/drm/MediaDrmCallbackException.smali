@@ -1,0 +1,61 @@
+###### Class io.bidmachine.media3.exoplayer.drm.MediaDrmCallbackException (io.bidmachine.media3.exoplayer.drm.MediaDrmCallbackException)
+.class public final Lio/bidmachine/media3/exoplayer/drm/MediaDrmCallbackException;
+.super Ljava/io/IOException;
+.source "MediaDrmCallbackException.java"
+
+
+# instance fields
+.field public final bytesLoaded:J
+
+.field public final dataSpec:Lio/bidmachine/media3/datasource/DataSpec;
+
+.field public final responseHeaders:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field public final uriAfterRedirects:Landroid/net/Uri;
+
+
+# direct methods
+.method public constructor <init>(Lio/bidmachine/media3/datasource/DataSpec;Landroid/net/Uri;Ljava/util/Map;JLjava/lang/Throwable;)V
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lio/bidmachine/media3/datasource/DataSpec;",
+            "Landroid/net/Uri;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;>;J",
+            "Ljava/lang/Throwable;",
+            ")V"
+        }
+    .end annotation
+
+    .line 62
+    invoke-direct {p0, p6}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    .line 63
+    iput-object p1, p0, Lio/bidmachine/media3/exoplayer/drm/MediaDrmCallbackException;->dataSpec:Lio/bidmachine/media3/datasource/DataSpec;
+
+    .line 64
+    iput-object p2, p0, Lio/bidmachine/media3/exoplayer/drm/MediaDrmCallbackException;->uriAfterRedirects:Landroid/net/Uri;
+
+    .line 65
+    iput-object p3, p0, Lio/bidmachine/media3/exoplayer/drm/MediaDrmCallbackException;->responseHeaders:Ljava/util/Map;
+
+    .line 66
+    iput-wide p4, p0, Lio/bidmachine/media3/exoplayer/drm/MediaDrmCallbackException;->bytesLoaded:J
+
+    return-void
+.end method

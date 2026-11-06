@@ -1,0 +1,21 @@
+package kotlin.coroutines.jvm.internal;
+
+/* JADX INFO: compiled from: boxing.kt */
+/* JADX INFO: loaded from: classes5.dex */
+public final class Boxing {
+    public static final Boolean boxBoolean(boolean z) {
+        return Boolean.valueOf(z);
+    }
+
+    public static final Integer boxInt(int i) {
+        return new Integer(i);
+    }
+
+    public static final Long boxLong(long j) {
+        return new Long(j);
+    }
+
+    public static final Double boxDouble(double d) {
+        return new Double(d);
+    }
+}

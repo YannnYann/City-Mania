@@ -1,0 +1,17 @@
+###### Class com.google.android.material.textfield.TextInputLayout$$ExternalSyntheticApiModelOutline6 (com.google.android.material.textfield.TextInputLayout$$ExternalSyntheticApiModelOutline6)
+.class public final synthetic Lcom/google/android/material/textfield/TextInputLayout$$ExternalSyntheticApiModelOutline6;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+
+# direct methods
+.method public static bridge synthetic m(Landroid/widget/EditText;)Landroid/graphics/drawable/Drawable;
+    .registers 1
+
+    .line 0
+    invoke-virtual {p0}, Landroid/widget/EditText;->getTextCursorDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+.end method

@@ -1,0 +1,290 @@
+###### Class com.explorestack.protobuf.MapFieldSchemaFull (com.explorestack.protobuf.MapFieldSchemaFull)
+.class public Lcom/explorestack/protobuf/MapFieldSchemaFull;
+.super Ljava/lang/Object;
+.source "MapFieldSchemaFull.java"
+
+# interfaces
+.implements Lcom/explorestack/protobuf/MapFieldSchema;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 36
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static getSerializedSizeFull(ILjava/lang/Object;Ljava/lang/Object;)I
+    .registers 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(I",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ")I"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_4
+
+    return v0
+
+    .line 97
+    :cond_4
+    check-cast p1, Lcom/explorestack/protobuf/MapField;
+
+    invoke-virtual {p1}, Lcom/explorestack/protobuf/MapField;->getMap()Ljava/util/Map;
+
+    move-result-object p1
+
+    .line 98
+    check-cast p2, Lcom/explorestack/protobuf/MapEntry;
+
+    .line 99
+    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_13
+
+    return v0
+
+    .line 103
+    :cond_13
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1b
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_42
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    .line 105
+    invoke-static {p0}, Lcom/explorestack/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result v2
+
+    .line 108
+    invoke-virtual {p2}, Lcom/explorestack/protobuf/MapEntry;->getMetadata()Lcom/explorestack/protobuf/MapEntry$Metadata;
+
+    move-result-object v3
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 107
+    invoke-static {v3, v4, v1}, Lcom/explorestack/protobuf/MapEntryLite;->computeSerializedSize(Lcom/explorestack/protobuf/MapEntryLite$Metadata;Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v1
+
+    .line 106
+    invoke-static {v1}, Lcom/explorestack/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
+
+    move-result v1
+
+    add-int/2addr v2, v1
+
+    add-int/2addr v0, v2
+
+    goto :goto_1b
+
+    :cond_42
+    return v0
+.end method
+
+.method public static mergeFromFull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .line 75
+    check-cast p0, Lcom/explorestack/protobuf/MapField;
+
+    .line 76
+    check-cast p1, Lcom/explorestack/protobuf/MapField;
+
+    .line 77
+    invoke-virtual {p0}, Lcom/explorestack/protobuf/MapField;->isMutable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    .line 78
+    invoke-virtual {p0}, Lcom/explorestack/protobuf/MapField;->copy()Lcom/explorestack/protobuf/MapField;
+
+    .line 80
+    :cond_d
+    invoke-virtual {p0, p1}, Lcom/explorestack/protobuf/MapField;->mergeFrom(Lcom/explorestack/protobuf/MapField;)V
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public forMapData(Ljava/lang/Object;)Ljava/util/Map;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/util/Map<",
+            "**>;"
+        }
+    .end annotation
+
+    .line 44
+    check-cast p1, Lcom/explorestack/protobuf/MapField;
+
+    invoke-virtual {p1}, Lcom/explorestack/protobuf/MapField;->getMap()Ljava/util/Map;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public forMapMetadata(Ljava/lang/Object;)Lcom/explorestack/protobuf/MapEntryLite$Metadata;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/explorestack/protobuf/MapEntryLite$Metadata<",
+            "**>;"
+        }
+    .end annotation
+
+    .line 65
+    check-cast p1, Lcom/explorestack/protobuf/MapEntry;
+
+    invoke-virtual {p1}, Lcom/explorestack/protobuf/MapEntry;->getMetadata()Lcom/explorestack/protobuf/MapEntry$Metadata;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public forMutableMapData(Ljava/lang/Object;)Ljava/util/Map;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/util/Map<",
+            "**>;"
+        }
+    .end annotation
+
+    .line 39
+    check-cast p1, Lcom/explorestack/protobuf/MapField;
+
+    invoke-virtual {p1}, Lcom/explorestack/protobuf/MapField;->getMutableMap()Ljava/util/Map;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getSerializedSize(ILjava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+
+    .line 86
+    invoke-static {p1, p2, p3}, Lcom/explorestack/protobuf/MapFieldSchemaFull;->getSerializedSizeFull(ILjava/lang/Object;Ljava/lang/Object;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public isImmutable(Ljava/lang/Object;)Z
+    .registers 2
+
+    .line 49
+    check-cast p1, Lcom/explorestack/protobuf/MapField;
+
+    invoke-virtual {p1}, Lcom/explorestack/protobuf/MapField;->isMutable()Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    return p1
+.end method
+
+.method public mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    .line 70
+    invoke-static {p1, p2}, Lcom/explorestack/protobuf/MapFieldSchemaFull;->mergeFromFull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public newMapField(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    .line 60
+    check-cast p1, Lcom/explorestack/protobuf/MapEntry;
+
+    invoke-static {p1}, Lcom/explorestack/protobuf/MapField;->newMapField(Lcom/explorestack/protobuf/MapEntry;)Lcom/explorestack/protobuf/MapField;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public toImmutable(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    .line 54
+    move-object v0, p1
+
+    check-cast v0, Lcom/explorestack/protobuf/MapField;
+
+    invoke-virtual {v0}, Lcom/explorestack/protobuf/MapField;->makeImmutable()V
+
+    return-object p1
+.end method

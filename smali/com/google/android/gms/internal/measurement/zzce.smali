@@ -1,0 +1,48 @@
+###### Class com.google.android.gms.internal.measurement.zzce (com.google.android.gms.internal.measurement.zzce)
+.class public final Lcom/google/android/gms/internal/measurement/zzce;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-measurement@@23.2.0"
+
+
+# static fields
+.field public static final zza:I
+
+.field private static volatile zzb:Z = false
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    .line 0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1f
+
+    if-lt v0, v1, :cond_9
+
+    const/high16 v0, 0x2000000
+
+    goto :goto_a
+
+    :cond_9
+    const/4 v0, 0x0
+
+    :goto_a
+    sput v0, Lcom/google/android/gms/internal/measurement/zzce;->zza:I
+
+    return-void
+.end method
+
+.method public static zza(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    .registers 4
+
+    const/4 p1, 0x0
+
+    .line 1
+    invoke-static {p0, p1, p2, p3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object p0
+
+    return-object p0
+.end method

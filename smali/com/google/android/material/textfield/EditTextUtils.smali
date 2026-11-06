@@ -1,0 +1,26 @@
+###### Class com.google.android.material.textfield.EditTextUtils (com.google.android.material.textfield.EditTextUtils)
+.class public Lcom/google/android/material/textfield/EditTextUtils;
+.super Ljava/lang/Object;
+.source "EditTextUtils.java"
+
+
+# direct methods
+.method public static isEditable(Landroid/widget/EditText;)Z
+    .registers 1
+
+    .line 27
+    invoke-virtual {p0}, Landroid/widget/TextView;->getInputType()I
+
+    move-result p0
+
+    if-eqz p0, :cond_8
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_8
+    const/4 p0, 0x0
+
+    return p0
+.end method

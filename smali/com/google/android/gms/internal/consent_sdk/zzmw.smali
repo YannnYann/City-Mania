@@ -1,0 +1,4 @@
+###### Class com.google.android.gms.internal.consent_sdk.zzmw (com.google.android.gms.internal.consent_sdk.zzmw)
+.class public final synthetic Lcom/google/android/gms/internal/consent_sdk/zzmw;
+.super Ljava/lang/Object;
+.source "com.google.android.ump:user-messaging-platform@@4.0.0"

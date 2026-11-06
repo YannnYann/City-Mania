@@ -1,0 +1,14 @@
+###### Class com.android.billingclient.api.AlternativeBillingOnlyReportingDetailsListener (com.android.billingclient.api.AlternativeBillingOnlyReportingDetailsListener)
+.class public interface abstract Lcom/android/billingclient/api/AlternativeBillingOnlyReportingDetailsListener;
+.super Ljava/lang/Object;
+.source "com.android.billingclient:billing@@8.0.0"
+
+
+# annotations
+.annotation build Lcom/android/billingclient/api/zzf;
+.end annotation
+
+
+# virtual methods
+.method public abstract onAlternativeBillingOnlyTokenResponse(Lcom/android/billingclient/api/BillingResult;Lcom/android/billingclient/api/AlternativeBillingOnlyReportingDetails;)V
+.end method

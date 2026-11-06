@@ -1,0 +1,17 @@
+###### Class com.google.common.util.concurrent.internal.InternalFutures (com.google.common.util.concurrent.internal.InternalFutures)
+.class public final Lcom/google/common/util/concurrent/internal/InternalFutures;
+.super Ljava/lang/Object;
+.source "InternalFutures.java"
+
+
+# direct methods
+.method public static tryInternalFastPathGetFailure(Lcom/google/common/util/concurrent/internal/InternalFutureFailureAccess;)Ljava/lang/Throwable;
+    .registers 1
+
+    .line 43
+    invoke-virtual {p0}, Lcom/google/common/util/concurrent/internal/InternalFutureFailureAccess;->tryInternalFastPathGetFailure()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    return-object p0
+.end method

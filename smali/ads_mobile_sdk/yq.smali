@@ -1,0 +1,62 @@
+###### Class ads_mobile_sdk.yq (ads_mobile_sdk.yq)
+.class public final Lads_mobile_sdk/yq;
+.super Lkotlin/jvm/internal/Lambda;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function1;
+
+
+# static fields
+.field public static final a:Lads_mobile_sdk/yq;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 1
+    new-instance v0, Lads_mobile_sdk/yq;
+
+    invoke-direct {v0}, Lads_mobile_sdk/yq;-><init>()V
+
+    sput-object v0, Lads_mobile_sdk/yq;->a:Lads_mobile_sdk/yq;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 2
+
+    const/4 v0, 0x1
+
+    .line 1
+    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    .line 384
+    check-cast p1, Lcom/google/gson/JsonElement;
+
+    .line 385
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 773
+    invoke-virtual {p1}, Lcom/google/gson/JsonElement;->getAsInt()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+.end method

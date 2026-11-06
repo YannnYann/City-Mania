@@ -1,0 +1,39 @@
+###### Class com.facebook.ads.redexgen.X.C2152as (com.facebook.ads.redexgen.X.as)
+.class public final Lcom/facebook/ads/redexgen/X/as;
+.super Ljava/lang/Object;
+.source ""
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/facebook/ads/redexgen/X/P7;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "MetadataSampleInfo"
+.end annotation
+
+
+# instance fields
+.field public final A00:I
+
+.field public final A01:J
+
+
+# direct methods
+.method public constructor <init>(JI)V
+    .registers 4
+
+    .line 82104
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 82105
+    iput-wide p1, p0, Lcom/facebook/ads/redexgen/X/as;->A01:J
+
+    .line 82106
+    iput p3, p0, Lcom/facebook/ads/redexgen/X/as;->A00:I
+
+    .line 82107
+    return-void
+.end method

@@ -1,0 +1,18 @@
+###### Class androidx.lifecycle.LifecycleCoroutineScope (androidx.lifecycle.LifecycleCoroutineScope)
+.class public abstract Landroidx/lifecycle/LifecycleCoroutineScope;
+.super Ljava/lang/Object;
+.source "Lifecycle.kt"
+
+# interfaces
+.implements Lkotlinx/coroutines/CoroutineScope;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 318
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

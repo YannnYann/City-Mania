@@ -1,0 +1,15 @@
+package com.google.android.gms.measurement.internal;
+
+/* JADX INFO: compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
+/* JADX INFO: loaded from: classes3.dex */
+public final class zzgt {
+    public final String zza;
+
+    public zzgt(String str) {
+        this.zza = str;
+    }
+
+    public final /* synthetic */ String zza() {
+        return this.zza;
+    }
+}

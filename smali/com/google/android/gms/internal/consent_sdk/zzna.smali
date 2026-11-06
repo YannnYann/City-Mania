@@ -1,0 +1,4 @@
+###### Class com.google.android.gms.internal.consent_sdk.zzna (com.google.android.gms.internal.consent_sdk.zzna)
+.class public final synthetic Lcom/google/android/gms/internal/consent_sdk/zzna;
+.super Ljava/lang/Object;
+.source "com.google.android.ump:user-messaging-platform@@4.0.0"

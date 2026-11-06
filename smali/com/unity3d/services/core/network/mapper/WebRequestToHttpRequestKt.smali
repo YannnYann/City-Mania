@@ -1,0 +1,95 @@
+###### Class com.unity3d.services.core.network.mapper.WebRequestToHttpRequestKt (com.unity3d.services.core.network.mapper.WebRequestToHttpRequestKt)
+.class public final Lcom/unity3d/services/core/network/mapper/WebRequestToHttpRequestKt;
+.super Ljava/lang/Object;
+.source "WebRequestToHttpRequest.kt"
+
+
+# direct methods
+.method public static final toHttpRequest(Lcom/unity3d/services/core/request/WebRequest;)Lcom/unity3d/services/core/network/model/HttpRequest;
+    .registers 23
+
+    const-string v0, "<this>"
+
+    move-object/from16 v1, p0
+
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 9
+    invoke-virtual {v1}, Lcom/unity3d/services/core/request/WebRequest;->getUrl()Ljava/net/URL;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/net/URL;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v0, "toString(...)"
+
+    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 10
+    invoke-virtual {v1}, Lcom/unity3d/services/core/request/WebRequest;->getRequestType()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "getRequestType(...)"
+
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lcom/unity3d/services/core/network/model/RequestType;->valueOf(Ljava/lang/String;)Lcom/unity3d/services/core/network/model/RequestType;
+
+    move-result-object v4
+
+    .line 11
+    invoke-virtual {v1}, Lcom/unity3d/services/core/request/WebRequest;->getHeaders()Ljava/util/Map;
+
+    move-result-object v6
+
+    const-string v0, "getHeaders(...)"
+
+    invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 12
+    invoke-virtual {v1}, Lcom/unity3d/services/core/request/WebRequest;->getBody()[B
+
+    move-result-object v5
+
+    .line 8
+    new-instance v1, Lcom/unity3d/services/core/network/model/HttpRequest;
+
+    const v20, 0x3ffe2
+
+    const/16 v21, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    invoke-direct/range {v1 .. v21}, Lcom/unity3d/services/core/network/model/HttpRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/unity3d/services/core/network/model/RequestType;Ljava/lang/Object;Ljava/util/Map;Ljava/util/Map;Lcom/unity3d/services/core/network/model/BodyType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;IIIIZLcom/unity3d/ads/core/data/model/OperationType;Ljava/io/File;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-object v1
+.end method

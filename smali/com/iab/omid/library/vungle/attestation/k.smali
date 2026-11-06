@@ -1,0 +1,9 @@
+###### Class com.iab.omid.library.vungle.attestation.k (com.iab.omid.library.vungle.attestation.k)
+.class public interface abstract Lcom/iab/omid/library/vungle/attestation/k;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract a()Z
+.end method

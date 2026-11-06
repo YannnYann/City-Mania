@@ -1,0 +1,23 @@
+package io.bidmachine.media3.exoplayer.image;
+
+import io.bidmachine.media3.common.Format;
+import io.bidmachine.media3.decoder.Decoder;
+import io.bidmachine.media3.decoder.DecoderInputBuffer;
+import io.bidmachine.media3.exoplayer.image.BitmapFactoryImageDecoder;
+
+/* JADX INFO: loaded from: classes5.dex */
+public interface ImageDecoder extends Decoder<DecoderInputBuffer, ImageOutputBuffer, ImageDecoderException> {
+
+    public interface Factory {
+        public static final Factory DEFAULT = new BitmapFactoryImageDecoder.Factory();
+
+        ImageDecoder createImageDecoder();
+
+        int supportsFormat(Format format);
+    }
+
+    @Override // io.bidmachine.media3.decoder.Decoder
+    ImageOutputBuffer dequeueOutputBuffer() throws ImageDecoderException;
+
+    void queueInputBuffer(DecoderInputBuffer decoderInputBuffer) throws ImageDecoderException;
+}

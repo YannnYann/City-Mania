@@ -1,0 +1,13 @@
+package kotlin.reflect;
+
+import java.util.List;
+
+/* JADX INFO: compiled from: KType.kt */
+/* JADX INFO: loaded from: classes5.dex */
+public interface KType extends KAnnotatedElement {
+    List<KTypeProjection> getArguments();
+
+    KClassifier getClassifier();
+
+    boolean isMarkedNullable();
+}

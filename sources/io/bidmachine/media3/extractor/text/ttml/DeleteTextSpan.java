@@ -1,0 +1,5 @@
+package io.bidmachine.media3.extractor.text.ttml;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class DeleteTextSpan {
+}

@@ -1,0 +1,29 @@
+###### Class com.google.android.libraries.ads.mobile.sdk.common.BaseError (com.google.android.libraries.ads.mobile.sdk.common.BaseError)
+.class public abstract Lcom/google/android/libraries/ads/mobile/sdk/common/BaseError;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation runtime Lcom/google/android/gms/common/annotation/KeepForSdk;
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<CodeT:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

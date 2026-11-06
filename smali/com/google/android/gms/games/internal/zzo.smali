@@ -1,0 +1,50 @@
+###### Class com.google.android.gms.games.internal.zzo (com.google.android.gms.games.internal.zzo)
+.class public final Lcom/google/android/gms/games/internal/zzo;
+.super Lcom/google/android/gms/games/internal/zza;
+.source "com.google.android.gms:play-services-games-v2@@22.1.0"
+
+
+# instance fields
+.field public final zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Lcom/google/android/gms/games/internal/zza;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/games/internal/zzo;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final zzd(ILjava/lang/String;)V
+    .registers 3
+
+    if-eqz p1, :cond_c
+
+    const/16 p2, 0xbbb
+
+    if-eq p1, p2, :cond_c
+
+    .line 2
+    iget-object p2, p0, Lcom/google/android/gms/games/internal/zzo;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/games/GamesStatusUtils;->zzb(Lcom/google/android/gms/tasks/TaskCompletionSource;I)V
+
+    return-void
+
+    :cond_c
+    iget-object p1, p0, Lcom/google/android/gms/games/internal/zzo;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    const/4 p2, 0x0
+
+    .line 1
+    invoke-virtual {p1, p2}, Lcom/google/android/gms/tasks/TaskCompletionSource;->trySetResult(Ljava/lang/Object;)Z
+
+    return-void
+.end method

@@ -1,0 +1,153 @@
+###### Class kotlinx.serialization.internal.ConcurrentHashMapCache (kotlinx.serialization.internal.ConcurrentHashMapCache)
+.class public final Lkotlinx/serialization/internal/ConcurrentHashMapCache;
+.super Ljava/lang/Object;
+.source "Caching.kt"
+
+# interfaces
+.implements Lkotlinx/serialization/internal/SerializerCache;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lkotlinx/serialization/internal/SerializerCache<",
+        "TT;>;"
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nCaching.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Caching.kt\nkotlinx/serialization/internal/ConcurrentHashMapCache\n+ 2 MapsJVM.kt\nkotlin/collections/MapsKt__MapsJVMKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,113:1\n73#2,2:114\n1#3:116\n*S KotlinDebug\n*F\n+ 1 Caching.kt\nkotlinx/serialization/internal/ConcurrentHashMapCache\n*L\n85#1:114,2\n85#1:116\n*E\n"
+.end annotation
+
+
+# instance fields
+.field public final cache:Ljava/util/concurrent/ConcurrentHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentHashMap<",
+            "Ljava/lang/Class<",
+            "*>;",
+            "Lkotlinx/serialization/internal/CacheEntry<",
+            "TT;>;>;"
+        }
+    .end annotation
+.end field
+
+.field public final compute:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Lkotlin/reflect/KClass<",
+            "*>;",
+            "Lkotlinx/serialization/KSerializer<",
+            "TT;>;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lkotlin/reflect/KClass<",
+            "*>;+",
+            "Lkotlinx/serialization/KSerializer<",
+            "TT;>;>;)V"
+        }
+    .end annotation
+
+    const-string v0, "compute"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 81
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkotlinx/serialization/internal/ConcurrentHashMapCache;->compute:Lkotlin/jvm/functions/Function1;
+
+    .line 82
+    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object p1, p0, Lkotlinx/serialization/internal/ConcurrentHashMapCache;->cache:Ljava/util/concurrent/ConcurrentHashMap;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public get(Lkotlin/reflect/KClass;)Lkotlinx/serialization/KSerializer;
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/reflect/KClass<",
+            "Ljava/lang/Object;",
+            ">;)",
+            "Lkotlinx/serialization/KSerializer<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "key"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 85
+    iget-object v0, p0, Lkotlinx/serialization/internal/ConcurrentHashMapCache;->cache:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {p1}, Lkotlin/jvm/JvmClassMappingKt;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    .line 114
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-nez v2, :cond_26
+
+    .line 86
+    new-instance v2, Lkotlinx/serialization/internal/CacheEntry;
+
+    iget-object v3, p0, Lkotlinx/serialization/internal/ConcurrentHashMapCache;->compute:Lkotlin/jvm/functions/Function1;
+
+    invoke-interface {v3, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lkotlinx/serialization/KSerializer;
+
+    invoke-direct {v2, p1}, Lkotlinx/serialization/internal/CacheEntry;-><init>(Lkotlinx/serialization/KSerializer;)V
+
+    .line 115
+    invoke-interface {v0, v1, v2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-nez p1, :cond_25
+
+    goto :goto_26
+
+    :cond_25
+    move-object v2, p1
+
+    .line 114
+    :cond_26
+    :goto_26
+    check-cast v2, Lkotlinx/serialization/internal/CacheEntry;
+
+    iget-object p1, v2, Lkotlinx/serialization/internal/CacheEntry;->serializer:Lkotlinx/serialization/KSerializer;
+
+    return-object p1
+.end method

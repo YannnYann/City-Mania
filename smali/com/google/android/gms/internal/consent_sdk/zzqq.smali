@@ -1,0 +1,7 @@
+###### Class com.google.android.gms.internal.consent_sdk.zzqq (com.google.android.gms.internal.consent_sdk.zzqq)
+.class public interface abstract Lcom/google/android/gms/internal/consent_sdk/zzqq;
+.super Ljava/lang/Object;
+.source "com.google.android.ump:user-messaging-platform@@4.0.0"
+
+# interfaces
+.implements Lcom/google/android/gms/internal/consent_sdk/zzqr;

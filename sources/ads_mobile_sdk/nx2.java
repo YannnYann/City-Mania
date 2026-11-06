@@ -1,0 +1,45 @@
+package ads_mobile_sdk;
+
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineExceptionHandler;
+import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.NonCancellable;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class nx2 extends SuspendLambda implements Function2 {
+    public final /* synthetic */ ei1 a;
+    public final /* synthetic */ sx2 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nx2(ei1 ei1Var, sx2 sx2Var, Continuation continuation) {
+        super(2, continuation);
+        this.a = ei1Var;
+        this.b = sx2Var;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new nx2(this.a, this.b, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(Object obj, Object obj2) {
+        return new nx2(this.a, this.b, (Continuation) obj2).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ResultKt.throwOnFailure(obj);
+        m21 m21Var = o21.f;
+        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(NonCancellable.INSTANCE.plus(getContext()).minusKey(rs3.b).minusKey(CoroutineExceptionHandler.Key).minusKey(Job.Key)), null, null, new mx2(this.a, this.b, null), 3, null);
+        return Unit.INSTANCE;
+    }
+}

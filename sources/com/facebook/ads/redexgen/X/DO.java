@@ -1,0 +1,18 @@
+package com.facebook.ads.redexgen.X;
+
+import com.unity3d.ads.core.domain.WebViewScreenCapture;
+
+/* JADX INFO: loaded from: assets/audience_network/classes.dex */
+public class DO extends AbstractRunnableC3004oq {
+    public final /* synthetic */ AnonymousClass65 A00;
+
+    public DO(AnonymousClass65 anonymousClass65) {
+        this.A00 = anonymousClass65;
+    }
+
+    @Override // com.facebook.ads.redexgen.X.AbstractRunnableC3004oq
+    public final void A07() {
+        AbstractC3111qc.A0G(1000, this.A00.A0H);
+        this.A00.postDelayed(this, WebViewScreenCapture.CACHE_TTL_MS);
+    }
+}

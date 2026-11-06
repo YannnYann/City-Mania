@@ -1,0 +1,306 @@
+###### Class androidx.constraintlayout.motion.widget.DesignTool (androidx.constraintlayout.motion.widget.DesignTool)
+.class public Landroidx/constraintlayout/motion/widget/DesignTool;
+.super Ljava/lang/Object;
+.source "DesignTool.java"
+
+
+# static fields
+.field public static final sAllAttributes:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Landroid/util/Pair<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            ">;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final sAllMargins:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public mLastEndState:Ljava/lang/String;
+
+.field public mLastEndStateId:I
+
+.field public mLastStartState:Ljava/lang/String;
+
+.field public mLastStartStateId:I
+
+.field public final mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 16
+
+    .line 47
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Landroidx/constraintlayout/motion/widget/DesignTool;->sAllAttributes:Ljava/util/HashMap;
+
+    .line 48
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v1, Landroidx/constraintlayout/motion/widget/DesignTool;->sAllMargins:Ljava/util/HashMap;
+
+    const/4 v2, 0x4
+
+    .line 54
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v2, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v3
+
+    const-string v4, "layout_constraintBottom_toBottomOf"
+
+    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v3, 0x3
+
+    .line 55
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v5
+
+    const-string v6, "layout_constraintBottom_toTopOf"
+
+    invoke-virtual {v0, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 56
+    invoke-static {v3, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    const-string v5, "layout_constraintTop_toBottomOf"
+
+    invoke-virtual {v0, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 57
+    invoke-static {v3, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    const-string v3, "layout_constraintTop_toTopOf"
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v2, 0x6
+
+    .line 58
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v2, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v7
+
+    const-string v8, "layout_constraintStart_toStartOf"
+
+    invoke-virtual {v0, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v7, 0x7
+
+    .line 59
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-static {v2, v7}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v9
+
+    const-string v10, "layout_constraintStart_toEndOf"
+
+    invoke-virtual {v0, v9, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 60
+    invoke-static {v7, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    const-string v9, "layout_constraintEnd_toStartOf"
+
+    invoke-virtual {v0, v2, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 61
+    invoke-static {v7, v7}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    const-string v7, "layout_constraintEnd_toEndOf"
+
+    invoke-virtual {v0, v2, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v2, 0x1
+
+    .line 62
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v2, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v11
+
+    const-string v12, "layout_constraintLeft_toLeftOf"
+
+    invoke-virtual {v0, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v11, 0x2
+
+    .line 63
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    invoke-static {v2, v11}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v13
+
+    const-string v14, "layout_constraintLeft_toRightOf"
+
+    invoke-virtual {v0, v13, v14}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 64
+    invoke-static {v11, v11}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v13
+
+    const-string v15, "layout_constraintRight_toRightOf"
+
+    invoke-virtual {v0, v13, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 65
+    invoke-static {v11, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    const-string v11, "layout_constraintRight_toLeftOf"
+
+    invoke-virtual {v0, v2, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v2, 0x5
+
+    .line 66
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v2, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    const-string v13, "layout_constraintBaseline_toBaselineOf"
+
+    invoke-virtual {v0, v2, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 69
+    const-string v0, "layout_marginBottom"
+
+    invoke-virtual {v1, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 70
+    invoke-virtual {v1, v6, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 71
+    const-string v0, "layout_marginTop"
+
+    invoke-virtual {v1, v5, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 72
+    invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 73
+    const-string v0, "layout_marginStart"
+
+    invoke-virtual {v1, v8, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 74
+    invoke-virtual {v1, v10, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 75
+    const-string v0, "layout_marginEnd"
+
+    invoke-virtual {v1, v9, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 76
+    const-string v0, "layout_marginEnd"
+
+    invoke-virtual {v1, v7, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 77
+    const-string v0, "layout_marginLeft"
+
+    invoke-virtual {v1, v12, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 78
+    const-string v0, "layout_marginLeft"
+
+    invoke-virtual {v1, v14, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 79
+    const-string v0, "layout_marginRight"
+
+    invoke-virtual {v1, v15, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 80
+    const-string v0, "layout_marginRight"
+
+    invoke-virtual {v1, v11, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroidx/constraintlayout/motion/widget/MotionLayout;)V
+    .registers 3
+
+    .line 90
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 85
+    iput-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
+
+    .line 86
+    iput-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndState:Ljava/lang/String;
+
+    const/4 v0, -0x1
+
+    .line 87
+    iput v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartStateId:I
+
+    .line 88
+    iput v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndStateId:I
+
+    .line 91
+    iput-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
+
+    return-void
+.end method

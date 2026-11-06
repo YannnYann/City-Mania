@@ -1,0 +1,79 @@
+###### Class androidx.core.widget.PopupWindowCompat (androidx.core.widget.PopupWindowCompat)
+.class public final Landroidx/core/widget/PopupWindowCompat;
+.super Ljava/lang/Object;
+.source "PopupWindowCompat.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/widget/PopupWindowCompat$Api23Impl;
+    }
+.end annotation
+
+
+# direct methods
+.method public static setOverlapAnchor(Landroid/widget/PopupWindow;Z)V
+    .registers 2
+
+    .line 83
+    invoke-static {p0, p1}, Landroidx/core/widget/PopupWindowCompat$Api23Impl;->setOverlapAnchor(Landroid/widget/PopupWindow;Z)V
+
+    return-void
+.end method
+
+.method public static setWindowLayoutType(Landroid/widget/PopupWindow;I)V
+    .registers 2
+
+    .line 148
+    invoke-static {p0, p1}, Landroidx/core/widget/PopupWindowCompat$Api23Impl;->setWindowLayoutType(Landroid/widget/PopupWindow;I)V
+
+    return-void
+.end method
+
+.method public static showAsDropDown(Landroid/widget/PopupWindow;Landroid/view/View;III)V
+    .registers 5
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 70
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
+
+    return-void
+.end method
+
+###### Class androidx.core.widget.PopupWindowCompat.Api23Impl (androidx.core.widget.PopupWindowCompat$Api23Impl)
+.class public Landroidx/core/widget/PopupWindowCompat$Api23Impl;
+.super Ljava/lang/Object;
+.source "PopupWindowCompat.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/core/widget/PopupWindowCompat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "Api23Impl"
+.end annotation
+
+
+# direct methods
+.method public static setOverlapAnchor(Landroid/widget/PopupWindow;Z)V
+    .registers 2
+
+    .line 208
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
+
+    return-void
+.end method
+
+.method public static setWindowLayoutType(Landroid/widget/PopupWindow;I)V
+    .registers 2
+
+    .line 216
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+
+    return-void
+.end method

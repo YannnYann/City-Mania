@@ -1,0 +1,112 @@
+package com.google.crypto.tink.shaded.protobuf;
+
+/* JADX INFO: loaded from: classes3.dex */
+public class LazyFieldLite {
+    public volatile boolean corrupted;
+    public ByteString delayedBytes;
+    public ExtensionRegistryLite extensionRegistry;
+    public volatile ByteString memoizedBytes;
+    public volatile MessageLite value;
+
+    public int hashCode() {
+        return 1;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LazyFieldLite)) {
+            return false;
+        }
+        LazyFieldLite lazyFieldLite = (LazyFieldLite) o;
+        MessageLite messageLite = this.value;
+        MessageLite messageLite2 = lazyFieldLite.value;
+        if (messageLite == null && messageLite2 == null) {
+            return toByteString().equals(lazyFieldLite.toByteString());
+        }
+        if (messageLite != null && messageLite2 != null) {
+            return messageLite.equals(messageLite2);
+        }
+        if (messageLite != null) {
+            return messageLite.equals(lazyFieldLite.getValue(messageLite.getDefaultInstanceForType()));
+        }
+        return getValue(messageLite2.getDefaultInstanceForType()).equals(messageLite2);
+    }
+
+    public MessageLite getValue(MessageLite defaultInstance) {
+        ensureInitialized(defaultInstance);
+        return this.value;
+    }
+
+    public MessageLite setValue(MessageLite value) {
+        MessageLite messageLite = this.value;
+        this.delayedBytes = null;
+        this.memoizedBytes = null;
+        this.value = value;
+        return messageLite;
+    }
+
+    public int getSerializedSize() {
+        if (this.memoizedBytes != null) {
+            return this.memoizedBytes.size();
+        }
+        ByteString byteString = this.delayedBytes;
+        if (byteString != null) {
+            return byteString.size();
+        }
+        if (this.value != null) {
+            return this.value.getSerializedSize();
+        }
+        return 0;
+    }
+
+    public ByteString toByteString() {
+        if (this.memoizedBytes != null) {
+            return this.memoizedBytes;
+        }
+        ByteString byteString = this.delayedBytes;
+        if (byteString != null) {
+            return byteString;
+        }
+        synchronized (this) {
+            try {
+                if (this.memoizedBytes != null) {
+                    return this.memoizedBytes;
+                }
+                if (this.value == null) {
+                    this.memoizedBytes = ByteString.EMPTY;
+                } else {
+                    this.memoizedBytes = this.value.toByteString();
+                }
+                return this.memoizedBytes;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public void ensureInitialized(MessageLite defaultInstance) {
+        if (this.value != null) {
+            return;
+        }
+        synchronized (this) {
+            if (this.value != null) {
+                return;
+            }
+            try {
+                if (this.delayedBytes != null) {
+                    this.value = defaultInstance.getParserForType().parseFrom(this.delayedBytes, this.extensionRegistry);
+                    this.memoizedBytes = this.delayedBytes;
+                } else {
+                    this.value = defaultInstance;
+                    this.memoizedBytes = ByteString.EMPTY;
+                }
+            } catch (InvalidProtocolBufferException unused) {
+                this.corrupted = true;
+                this.value = defaultInstance;
+                this.memoizedBytes = ByteString.EMPTY;
+            }
+        }
+    }
+}

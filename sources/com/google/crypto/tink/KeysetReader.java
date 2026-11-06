@@ -1,0 +1,9 @@
+package com.google.crypto.tink;
+
+import com.google.crypto.tink.proto.Keyset;
+import java.io.IOException;
+
+/* JADX INFO: loaded from: classes3.dex */
+public interface KeysetReader {
+    Keyset read() throws IOException;
+}

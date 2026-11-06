@@ -1,0 +1,20 @@
+###### Class com.facebook.ads.redexgen.X.InterfaceC3435vq (com.facebook.ads.redexgen.X.vq)
+.class public interface abstract Lcom/facebook/ads/redexgen/X/vq;
+.super Ljava/lang/Object;
+.source ""
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/facebook/ads/redexgen/X/ED;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "VideoCompletionListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract AHW(I)V
+.end method

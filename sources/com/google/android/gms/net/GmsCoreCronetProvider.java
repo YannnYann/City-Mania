@@ -1,0 +1,14 @@
+package com.google.android.gms.net;
+
+import android.content.Context;
+import androidx.annotation.Keep;
+
+/* JADX INFO: compiled from: com.google.android.gms:play-services-cronet@@17.0.1 */
+/* JADX INFO: loaded from: classes3.dex */
+@Keep
+@Deprecated
+public class GmsCoreCronetProvider extends PlayServicesCronetProvider {
+    public GmsCoreCronetProvider(Context context) {
+        super(context);
+    }
+}

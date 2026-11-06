@@ -1,0 +1,33 @@
+package androidx.lifecycle.viewmodel;
+
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import kotlin.jvm.internal.Intrinsics;
+
+/* JADX INFO: compiled from: InitializerViewModelFactory.kt */
+/* JADX INFO: loaded from: classes.dex */
+public final class InitializerViewModelFactory implements ViewModelProvider.Factory {
+    public final ViewModelInitializer<?>[] initializers;
+
+    public InitializerViewModelFactory(ViewModelInitializer<?>... initializers) {
+        Intrinsics.checkNotNullParameter(initializers, "initializers");
+        this.initializers = initializers;
+    }
+
+    @Override // androidx.lifecycle.ViewModelProvider.Factory
+    public <T extends ViewModel> T create(Class<T> modelClass, CreationExtras extras) {
+        Intrinsics.checkNotNullParameter(modelClass, "modelClass");
+        Intrinsics.checkNotNullParameter(extras, "extras");
+        T t = null;
+        for (ViewModelInitializer<?> viewModelInitializer : this.initializers) {
+            if (Intrinsics.areEqual(viewModelInitializer.getClazz$lifecycle_viewmodel_release(), modelClass)) {
+                T tInvoke = viewModelInitializer.getInitializer$lifecycle_viewmodel_release().invoke(extras);
+                t = tInvoke instanceof ViewModel ? tInvoke : null;
+            }
+        }
+        if (t != null) {
+            return t;
+        }
+        throw new IllegalArgumentException("No initializer set for given class " + modelClass.getName());
+    }
+}

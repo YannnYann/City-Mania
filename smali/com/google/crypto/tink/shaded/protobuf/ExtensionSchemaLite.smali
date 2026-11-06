@@ -1,0 +1,2434 @@
+###### Class com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite (com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite)
+.class public final Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+.super Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+.source "ExtensionSchemaLite.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema<",
+        "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+        ">;"
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 18
+    invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public extensionNumber(Ljava/util/Map$Entry;)I
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "extension"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map$Entry<",
+            "**>;)I"
+        }
+    .end annotation
+
+    .line 308
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    .line 309
+    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public findExtensionByNumber(Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/MessageLite;I)Ljava/lang/Object;
+    .registers 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "extensionRegistry",
+            "defaultInstance",
+            "number"
+        }
+    .end annotation
+
+    .line 518
+    invoke-virtual {p1, p2, p3}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;->findLiteExtensionByNumber(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;I)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "message"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    .line 27
+    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    return-object p1
+.end method
+
+.method public getMutableExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "message"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+            ">;"
+        }
+    .end annotation
+
+    .line 37
+    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->ensureExtensionsAreMutable()Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public hasExtensions(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Z
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "prototype"
+        }
+    .end annotation
+
+    .line 22
+    instance-of p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+
+    return p1
+.end method
+
+.method public makeImmutable(Ljava/lang/Object;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "message"
+        }
+    .end annotation
+
+    .line 42
+    invoke-virtual {p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->makeImmutable()V
+
+    return-void
+.end method
+
+.method public parseExtension(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+    .registers 14
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "containerMessage",
+            "reader",
+            "extensionObject",
+            "extensionRegistry",
+            "extensions",
+            "unknownFields",
+            "unknownFieldSchema"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<UT:",
+            "Ljava/lang/Object;",
+            "UB:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Object;",
+            "Lcom/google/crypto/tink/shaded/protobuf/Reader;",
+            "Ljava/lang/Object;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+            ">;TUB;",
+            "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema<",
+            "TUT;TUB;>;)TUB;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 55
+    check-cast p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    .line 57
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getNumber()I
+
+    move-result v1
+
+    .line 59
+    iget-object v0, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e3
+
+    iget-object v0, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e3
+
+    .line 61
+    sget-object p4, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    aget p4, p4, v0
+
+    packed-switch p4, :pswitch_data_258
+
+    .line 169
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p4, "Type cannot be packed: "
+
+    invoke-virtual {p2, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p3, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    .line 170
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 155
+    :pswitch_42
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 156
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readEnumList(Ljava/util/List;)V
+
+    .line 157
+    iget-object p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    .line 162
+    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getEnumType()Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;
+
+    move-result-object v3
+
+    move-object v0, p1
+
+    move-object v4, p6
+
+    move-object v5, p7
+
+    .line 158
+    invoke-static/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->filterUnknownEnumList(Ljava/lang/Object;ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+
+    move-result-object p6
+
+    goto/16 :goto_dd
+
+    :pswitch_59
+    move-object v4, p6
+
+    .line 148
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 149
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSInt64List(Ljava/util/List;)V
+
+    goto/16 :goto_dd
+
+    :pswitch_64
+    move-object v4, p6
+
+    .line 141
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 142
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSInt32List(Ljava/util/List;)V
+
+    goto/16 :goto_dd
+
+    :pswitch_6f
+    move-object v4, p6
+
+    .line 134
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 135
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSFixed64List(Ljava/util/List;)V
+
+    goto/16 :goto_dd
+
+    :pswitch_7a
+    move-object v4, p6
+
+    .line 127
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 128
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSFixed32List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_84
+    move-object v4, p6
+
+    .line 120
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 121
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readUInt32List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_8e
+    move-object v4, p6
+
+    .line 113
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 114
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readBoolList(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_98
+    move-object v4, p6
+
+    .line 106
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 107
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readFixed32List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_a2
+    move-object v4, p6
+
+    .line 99
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 100
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readFixed64List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_ac
+    move-object v4, p6
+
+    .line 92
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 93
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readInt32List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_b6
+    move-object v4, p6
+
+    .line 85
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 86
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readUInt64List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_c0
+    move-object v4, p6
+
+    .line 78
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 79
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readInt64List(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_ca
+    move-object v4, p6
+
+    .line 71
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 72
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readFloatList(Ljava/util/List;)V
+
+    goto :goto_dd
+
+    :pswitch_d4
+    move-object v4, p6
+
+    .line 64
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 65
+    invoke-interface {p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readDoubleList(Ljava/util/List;)V
+
+    .line 172
+    :goto_dd
+    iget-object p1, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p1, v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    return-object p6
+
+    :cond_e3
+    move-object v0, p1
+
+    move-object v4, p6
+
+    move-object v5, p7
+
+    .line 176
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object p1
+
+    sget-object p6, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->ENUM:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    if-ne p1, p6, :cond_109
+
+    .line 177
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readInt32()I
+
+    move-result p1
+
+    .line 178
+    iget-object p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getEnumType()Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;
+
+    move-result-object p2
+
+    invoke-interface {p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLiteMap;->findValueByNumber(I)Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumLite;
+
+    move-result-object p2
+
+    if-nez p2, :cond_103
+
+    .line 180
+    invoke-static {v0, v1, p1, v4, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(Ljava/lang/Object;IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 185
+    :cond_103
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto/16 :goto_224
+
+    .line 187
+    :cond_109
+    sget-object p1, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object p6
+
+    invoke-virtual {p6}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p6
+
+    aget p1, p1, p6
+
+    packed-switch p1, :pswitch_data_278
+
+    const/4 p1, 0x0
+
+    goto/16 :goto_224
+
+    .line 261
+    :pswitch_11b
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->isRepeated()Z
+
+    move-result p1
+
+    if-nez p1, :cond_14d
+
+    .line 262
+    iget-object p1, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->getField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 263
+    instance-of p6, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    if-eqz p6, :cond_14d
+
+    .line 264
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->getInstance()Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    move-result-object p6
+
+    invoke-virtual {p6, p1}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object p6
+
+    .line 265
+    move-object p7, p1
+
+    check-cast p7, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    invoke-virtual {p7}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->isMutable()Z
+
+    move-result p7
+
+    if-nez p7, :cond_149
+
+    .line 266
+    invoke-interface {p6}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->newInstance()Ljava/lang/Object;
+
+    move-result-object p7
+
+    .line 267
+    invoke-interface {p6, p7, p1}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 268
+    iget-object p1, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p1, p7}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    move-object p1, p7
+
+    .line 271
+    :cond_149
+    invoke-interface {p2, p1, p6, p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->mergeMessageField(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
+
+    return-object v4
+
+    .line 277
+    :cond_14d
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    .line 276
+    invoke-interface {p2, p1, p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readMessage(Ljava/lang/Class;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    goto/16 :goto_224
+
+    .line 238
+    :pswitch_15b
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->isRepeated()Z
+
+    move-result p1
+
+    if-nez p1, :cond_18d
+
+    .line 239
+    iget-object p1, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->getField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 240
+    instance-of p6, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    if-eqz p6, :cond_18d
+
+    .line 241
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->getInstance()Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    move-result-object p6
+
+    invoke-virtual {p6, p1}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object p6
+
+    .line 242
+    move-object p7, p1
+
+    check-cast p7, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+
+    invoke-virtual {p7}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->isMutable()Z
+
+    move-result p7
+
+    if-nez p7, :cond_189
+
+    .line 243
+    invoke-interface {p6}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->newInstance()Ljava/lang/Object;
+
+    move-result-object p7
+
+    .line 244
+    invoke-interface {p6, p7, p1}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 245
+    iget-object p1, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p1, p7}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    move-object p1, p7
+
+    .line 248
+    :cond_189
+    invoke-interface {p2, p1, p6, p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->mergeGroupField(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
+
+    return-object v4
+
+    .line 254
+    :cond_18d
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    .line 253
+    invoke-interface {p2, p1, p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readGroup(Ljava/lang/Class;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    goto/16 :goto_224
+
+    .line 232
+    :pswitch_19b
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readString()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto/16 :goto_224
+
+    .line 213
+    :pswitch_1a1
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readBytes()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    move-result-object p1
+
+    goto/16 :goto_224
+
+    .line 281
+    :pswitch_1a7
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Shouldn\'t reach here."
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 228
+    :pswitch_1af
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSInt64()J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    goto/16 :goto_224
+
+    .line 225
+    :pswitch_1b9
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSInt32()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 222
+    :pswitch_1c2
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSFixed64()J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 219
+    :pswitch_1cb
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readSFixed32()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 216
+    :pswitch_1d4
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readUInt32()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 210
+    :pswitch_1dd
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readBool()Z
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 207
+    :pswitch_1e6
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readFixed32()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 204
+    :pswitch_1ef
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readFixed64()J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 201
+    :pswitch_1f8
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readInt32()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 198
+    :pswitch_201
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readUInt64()J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 195
+    :pswitch_20a
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readInt64()J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 192
+    :pswitch_213
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readFloat()F
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    goto :goto_224
+
+    .line 189
+    :pswitch_21c
+    invoke-interface {p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readDouble()D
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    .line 284
+    :goto_224
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->isRepeated()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_230
+
+    .line 285
+    iget-object p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->addRepeatedField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    return-object v4
+
+    .line 287
+    :cond_230
+    sget-object p2, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p4
+
+    aget p2, p2, p4
+
+    const/16 p4, 0x11
+
+    if-eq p2, p4, :cond_245
+
+    const/16 p4, 0x12
+
+    if-eq p2, p4, :cond_245
+
+    goto :goto_251
+
+    .line 291
+    :cond_245
+    iget-object p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->getField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_251
+
+    .line 293
+    invoke-static {p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->mergeMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 299
+    :cond_251
+    :goto_251
+    iget-object p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p5, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    return-object v4
+
+    nop
+
+    :pswitch_data_258
+    .packed-switch 0x1
+        :pswitch_d4
+        :pswitch_ca
+        :pswitch_c0
+        :pswitch_b6
+        :pswitch_ac
+        :pswitch_a2
+        :pswitch_98
+        :pswitch_8e
+        :pswitch_84
+        :pswitch_7a
+        :pswitch_6f
+        :pswitch_64
+        :pswitch_59
+        :pswitch_42
+    .end packed-switch
+
+    :pswitch_data_278
+    .packed-switch 0x1
+        :pswitch_21c
+        :pswitch_213
+        :pswitch_20a
+        :pswitch_201
+        :pswitch_1f8
+        :pswitch_1ef
+        :pswitch_1e6
+        :pswitch_1dd
+        :pswitch_1d4
+        :pswitch_1cb
+        :pswitch_1c2
+        :pswitch_1b9
+        :pswitch_1af
+        :pswitch_1a7
+        :pswitch_1a1
+        :pswitch_19b
+        :pswitch_15b
+        :pswitch_11b
+    .end packed-switch
+.end method
+
+.method public parseLengthPrefixedMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/Reader;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
+    .registers 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "reader",
+            "extensionObject",
+            "extensionRegistry",
+            "extensions"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/crypto/tink/shaded/protobuf/Reader;",
+            "Ljava/lang/Object;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+            ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 528
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    .line 531
+    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0, p3}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readMessage(Ljava/lang/Class;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 532
+    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-virtual {p4, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public parseMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/ByteString;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
+    .registers 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "data",
+            "extensionObject",
+            "extensionRegistry",
+            "extensions"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/crypto/tink/shaded/protobuf/ByteString;",
+            "Ljava/lang/Object;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;",
+            ">;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 542
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
+
+    .line 545
+    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;->newBuilderForType()Lcom/google/crypto/tink/shaded/protobuf/MessageLite$Builder;
+
+    move-result-object v0
+
+    .line 547
+    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->newCodedInput()Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;
+
+    move-result-object p1
+
+    .line 549
+    invoke-interface {v0, p1, p3}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite$Builder;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite$Builder;
+
+    .line 550
+    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    invoke-interface {v0}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite$Builder;->buildPartial()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    move-result-object p3
+
+    invoke-virtual {p4, p2, p3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+
+    const/4 p2, 0x0
+
+    .line 551
+    invoke-virtual {p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->checkLastTagWas(I)V
+
+    return-void
+.end method
+
+.method public serializeExtension(Lcom/google/crypto/tink/shaded/protobuf/Writer;Ljava/util/Map$Entry;)V
+    .registers 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "writer",
+            "extension"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/crypto/tink/shaded/protobuf/Writer;",
+            "Ljava/util/Map$Entry<",
+            "**>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 315
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    .line 316
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_18e
+
+    .line 317
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v2
+
+    aget v1, v1, v2
+
+    const/4 v2, 0x0
+
+    packed-switch v1, :pswitch_data_2ee
+
+    goto/16 :goto_19d
+
+    .line 438
+    :pswitch_1e
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    if-eqz v1, :cond_19d
+
+    .line 439
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_19d
+
+    .line 441
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    .line 442
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 444
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->getInstance()Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object v1
+
+    .line 440
+    invoke-static {v0, p2, p1, v1}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeMessageList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+
+    return-void
+
+    .line 426
+    :pswitch_4a
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    if-eqz v1, :cond_19d
+
+    .line 427
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_19d
+
+    .line 429
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    .line 430
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 432
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->getInstance()Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object v1
+
+    .line 428
+    invoke-static {v0, p2, p1, v1}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeGroupList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+
+    return-void
+
+    .line 422
+    :pswitch_76
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 421
+    invoke-static {v0, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeStringList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+
+    return-void
+
+    .line 376
+    :pswitch_84
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 375
+    invoke-static {v0, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBytesList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+
+    return-void
+
+    .line 415
+    :pswitch_92
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 416
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 418
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 414
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 408
+    :pswitch_a4
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 409
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 411
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 407
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 401
+    :pswitch_b6
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 402
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 404
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 400
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 394
+    :pswitch_c8
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 395
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 397
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 393
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 387
+    :pswitch_da
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 388
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 390
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 386
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 380
+    :pswitch_ec
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 381
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 383
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 379
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 369
+    :pswitch_fe
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 370
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 372
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 368
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBoolList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 362
+    :pswitch_110
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 363
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 365
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 361
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 355
+    :pswitch_122
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 356
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 358
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 354
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 348
+    :pswitch_134
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 349
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 351
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 347
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 341
+    :pswitch_146
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 342
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 344
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 340
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 334
+    :pswitch_158
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 335
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 337
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 333
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 327
+    :pswitch_16a
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 328
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 330
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 326
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFloatList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 320
+    :pswitch_17c
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v1
+
+    .line 321
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    .line 323
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked()Z
+
+    move-result v0
+
+    .line 319
+    invoke-static {v1, p2, p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeDoubleList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+
+    return-void
+
+    .line 450
+    :cond_18e
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v2
+
+    aget v1, v1, v2
+
+    packed-switch v1, :pswitch_data_316
+
+    :cond_19d
+    :goto_19d
+    return-void
+
+    .line 507
+    :pswitch_19e
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    .line 508
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 509
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->getInstance()Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    move-result-object v2
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p2
+
+    invoke-virtual {v2, p2}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object p2
+
+    .line 506
+    invoke-interface {p1, v0, v1, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeMessage(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+
+    return-void
+
+    .line 501
+    :pswitch_1ba
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    .line 502
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 503
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->getInstance()Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
+
+    move-result-object v2
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p2
+
+    invoke-virtual {v2, p2}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Class;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+
+    move-result-object p2
+
+    .line 500
+    invoke-interface {p1, v0, v1, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeGroup(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+
+    return-void
+
+    .line 497
+    :pswitch_1d6
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/String;
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeString(ILjava/lang/String;)V
+
+    return-void
+
+    .line 476
+    :pswitch_1e4
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeBytes(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)V
+
+    return-void
+
+    .line 494
+    :pswitch_1f2
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeInt32(II)V
+
+    return-void
+
+    .line 491
+    :pswitch_204
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Long;
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeSInt64(IJ)V
+
+    return-void
+
+    .line 488
+    :pswitch_216
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeSInt32(II)V
+
+    return-void
+
+    .line 485
+    :pswitch_228
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Long;
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeSFixed64(IJ)V
+
+    return-void
+
+    .line 482
+    :pswitch_23a
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeSFixed32(II)V
+
+    return-void
+
+    .line 479
+    :pswitch_24c
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeUInt32(II)V
+
+    return-void
+
+    .line 473
+    :pswitch_25e
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeBool(IZ)V
+
+    return-void
+
+    .line 470
+    :pswitch_270
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeFixed32(II)V
+
+    return-void
+
+    .line 467
+    :pswitch_282
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Long;
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeFixed64(IJ)V
+
+    return-void
+
+    .line 464
+    :pswitch_294
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeInt32(II)V
+
+    return-void
+
+    .line 461
+    :pswitch_2a6
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Long;
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeUInt64(IJ)V
+
+    return-void
+
+    .line 458
+    :pswitch_2b8
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Long;
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeInt64(IJ)V
+
+    return-void
+
+    .line 455
+    :pswitch_2ca
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Float;
+
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p2
+
+    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeFloat(IF)V
+
+    return-void
+
+    .line 452
+    :pswitch_2dc
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
+
+    move-result v0
+
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Double;
+
+    invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v1
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/Writer;->writeDouble(ID)V
+
+    return-void
+
+    :pswitch_data_2ee
+    .packed-switch 0x1
+        :pswitch_17c
+        :pswitch_16a
+        :pswitch_158
+        :pswitch_146
+        :pswitch_134
+        :pswitch_122
+        :pswitch_110
+        :pswitch_fe
+        :pswitch_ec
+        :pswitch_da
+        :pswitch_c8
+        :pswitch_b6
+        :pswitch_a4
+        :pswitch_92
+        :pswitch_84
+        :pswitch_76
+        :pswitch_4a
+        :pswitch_1e
+    .end packed-switch
+
+    :pswitch_data_316
+    .packed-switch 0x1
+        :pswitch_2dc
+        :pswitch_2ca
+        :pswitch_2b8
+        :pswitch_2a6
+        :pswitch_294
+        :pswitch_282
+        :pswitch_270
+        :pswitch_25e
+        :pswitch_24c
+        :pswitch_23a
+        :pswitch_228
+        :pswitch_216
+        :pswitch_204
+        :pswitch_1f2
+        :pswitch_1e4
+        :pswitch_1d6
+        :pswitch_1ba
+        :pswitch_19e
+    .end packed-switch
+.end method
+
+###### Class com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite.AnonymousClass1 (com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite$1)
+.class public synthetic Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;
+.super Ljava/lang/Object;
+.source "ExtensionSchemaLite.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1009
+    name = null
+.end annotation
+
+
+# static fields
+.field public static final synthetic $SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 3
+
+    .line 61
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->values()[Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    :try_start_9
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->DOUBLE:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_12
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_12} :catch_12
+
+    :catch_12
+    :try_start_12
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->FLOAT:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1d
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1d} :catch_1d
+
+    :catch_1d
+    :try_start_1d
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->INT64:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_28
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_28} :catch_28
+
+    :catch_28
+    :try_start_28
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->UINT64:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_33
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_28 .. :try_end_33} :catch_33
+
+    :catch_33
+    :try_start_33
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->INT32:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_3e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_3e
+
+    :catch_3e
+    :try_start_3e
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->FIXED64:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_49
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_49
+
+    :catch_49
+    :try_start_49
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->FIXED32:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_54
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_49 .. :try_end_54} :catch_54
+
+    :catch_54
+    :try_start_54
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->BOOL:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_60
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_54 .. :try_end_60} :catch_60
+
+    :catch_60
+    :try_start_60
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->UINT32:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x9
+
+    aput v2, v0, v1
+    :try_end_6c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_60 .. :try_end_6c} :catch_6c
+
+    :catch_6c
+    :try_start_6c
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->SFIXED32:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xa
+
+    aput v2, v0, v1
+    :try_end_78
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6c .. :try_end_78} :catch_78
+
+    :catch_78
+    :try_start_78
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->SFIXED64:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xb
+
+    aput v2, v0, v1
+    :try_end_84
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_78 .. :try_end_84} :catch_84
+
+    :catch_84
+    :try_start_84
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->SINT32:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xc
+
+    aput v2, v0, v1
+    :try_end_90
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_84 .. :try_end_90} :catch_90
+
+    :catch_90
+    :try_start_90
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->SINT64:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xd
+
+    aput v2, v0, v1
+    :try_end_9c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_90 .. :try_end_9c} :catch_9c
+
+    :catch_9c
+    :try_start_9c
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->ENUM:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xe
+
+    aput v2, v0, v1
+    :try_end_a8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9c .. :try_end_a8} :catch_a8
+
+    :catch_a8
+    :try_start_a8
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->BYTES:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xf
+
+    aput v2, v0, v1
+    :try_end_b4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a8 .. :try_end_b4} :catch_b4
+
+    :catch_b4
+    :try_start_b4
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->STRING:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x10
+
+    aput v2, v0, v1
+    :try_end_c0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b4 .. :try_end_c0} :catch_c0
+
+    :catch_c0
+    :try_start_c0
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->GROUP:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x11
+
+    aput v2, v0, v1
+    :try_end_cc
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_c0 .. :try_end_cc} :catch_cc
+
+    :catch_cc
+    :try_start_cc
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->MESSAGE:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x12
+
+    aput v2, v0, v1
+    :try_end_d8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_cc .. :try_end_d8} :catch_d8
+
+    :catch_d8
+    return-void
+.end method

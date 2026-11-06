@@ -1,0 +1,37 @@
+###### Class com.google.protobuf.StructProto (com.google.protobuf.StructProto)
+.class public final Lcom/google/protobuf/StructProto;
+.super Ljava/lang/Object;
+.source "StructProto.java"
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 0
+
+    .line 0
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .registers 1
+
+    .line 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static registerAllExtensions(Lcom/google/protobuf/ExtensionRegistryLite;)V
+    .registers 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "registry"
+        }
+    .end annotation
+
+    .line 0
+    return-void
+.end method

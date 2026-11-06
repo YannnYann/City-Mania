@@ -1,0 +1,24 @@
+package androidx.datastore.preferences.protobuf;
+
+import java.io.IOException;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface Schema<T> {
+    boolean equals(T message, T other);
+
+    int getSerializedSize(T message);
+
+    int hashCode(T message);
+
+    boolean isInitialized(T message);
+
+    void makeImmutable(T message);
+
+    void mergeFrom(T message, Reader reader, ExtensionRegistryLite extensionRegistry) throws IOException;
+
+    void mergeFrom(T message, T other);
+
+    T newInstance();
+
+    void writeTo(T message, Writer writer) throws IOException;
+}

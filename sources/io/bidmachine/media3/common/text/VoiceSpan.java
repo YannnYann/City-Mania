@@ -1,0 +1,25 @@
+package io.bidmachine.media3.common.text;
+
+import android.os.Bundle;
+import io.bidmachine.media3.common.util.Assertions;
+import io.bidmachine.media3.common.util.Util;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class VoiceSpan {
+    public static final String FIELD_NAME = Util.intToStringMaxRadix(0);
+    public final String name;
+
+    public VoiceSpan(String str) {
+        this.name = str;
+    }
+
+    public Bundle toBundle() {
+        Bundle bundle = new Bundle();
+        bundle.putString(FIELD_NAME, this.name);
+        return bundle;
+    }
+
+    public static VoiceSpan fromBundle(Bundle bundle) {
+        return new VoiceSpan((String) Assertions.checkNotNull(bundle.getString(FIELD_NAME)));
+    }
+}

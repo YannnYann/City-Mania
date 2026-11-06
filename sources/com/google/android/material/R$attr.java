@@ -1,0 +1,56 @@
+package com.google.android.material;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class R$attr {
+    public static int bottomSheetStyle = 2130968717;
+    public static int chipStyle = 2130968805;
+    public static int colorOnSurface = 2130968871;
+    public static int colorOnSurfaceVariant = 2130968873;
+    public static int colorPrimaryVariant = 2130968887;
+    public static int colorSurface = 2130968894;
+    public static int cornerSize = 2130968965;
+    public static int elevationOverlayAccentColor = 2130969046;
+    public static int elevationOverlayColor = 2130969047;
+    public static int elevationOverlayEnabled = 2130969048;
+    public static int focusRingsEnabled = 2130969162;
+    public static int focusRingsShapeAppearance = 2130969170;
+    public static int isMaterial3Theme = 2130969271;
+    public static int isMaterialTheme = 2130969272;
+    public static int materialAlertDialogTheme = 2130969440;
+    public static int materialButtonGroupPopupMenuStyle = 2130969446;
+    public static int materialButtonGroupStyle = 2130969447;
+    public static int materialButtonStyle = 2130969449;
+    public static int materialButtonToggleGroupStyle = 2130969450;
+    public static int materialCalendarStyle = 2130969464;
+    public static int materialClockStyle = 2130969472;
+    public static int materialDividerStyle = 2130969475;
+    public static int materialSizeOverlay = 2130969485;
+    public static int materialThemeOverlay = 2130969492;
+    public static int minTouchTargetSize = 2130969520;
+    public static int motionDurationLong2 = 2130969534;
+    public static int motionDurationMedium1 = 2130969537;
+    public static int motionDurationMedium2 = 2130969538;
+    public static int motionDurationMedium4 = 2130969540;
+    public static int motionDurationShort2 = 2130969542;
+    public static int motionDurationShort3 = 2130969543;
+    public static int motionDurationShort4 = 2130969544;
+    public static int motionEasingEmphasizedAccelerateInterpolator = 2130969548;
+    public static int motionEasingEmphasizedDecelerateInterpolator = 2130969549;
+    public static int motionEasingEmphasizedInterpolator = 2130969550;
+    public static int motionEasingLinearInterpolator = 2130969552;
+    public static int motionSpringFastSpatial = 2130969572;
+    public static int nestedScrollable = 2130969589;
+    public static int shapeAppearance = 2130969717;
+    public static int shapeAppearanceOverlay = 2130969728;
+    public static int snackbarStyle = 2130969776;
+    public static int state_collapsed = 2130969802;
+    public static int state_collapsible = 2130969803;
+    public static int state_dragged = 2130969804;
+    public static int state_error = 2130969805;
+    public static int state_indeterminate = 2130969806;
+    public static int state_liftable = 2130969807;
+    public static int state_lifted = 2130969808;
+    public static int textAppearanceLineHeightEnabled = 2130969911;
+    public static int textInputStyle = 2130969945;
+    public static int widthChange = 2130970086;
+}

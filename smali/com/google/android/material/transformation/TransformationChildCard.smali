@@ -1,0 +1,9 @@
+###### Class com.google.android.material.transformation.TransformationChildCard (com.google.android.material.transformation.TransformationChildCard)
+.class public Lcom/google/android/material/transformation/TransformationChildCard;
+.super Lcom/google/android/material/circularreveal/cardview/CircularRevealCardView;
+.source "TransformationChildCard.java"
+
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
